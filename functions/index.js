@@ -67,11 +67,10 @@ app.post('/', (req, res) => {
         for (const file in uploads) {
             var ascii = await p2a.convert(uploads[file], { height: 50, width: 100 }, 'gscale_70')
             art.push(ascii)
-            
             fs.unlinkSync(uploads[file]);
 
         }
-        res.send(art);
+        res.send(art[0]);
     });
 
     busboy.end(req.rawBody);
