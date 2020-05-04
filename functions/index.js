@@ -7,6 +7,8 @@ const path = require('path');
 const os = require('os');
 const fs = require('fs');
 
+const p2a = require('./img2ascii.js')
+
 const app = express();
 
 const runtimeOpts = {
@@ -59,14 +61,17 @@ app.post('/', (req, res) => {
     busboy.on('finish', async () => {
         await Promise.all(fileWrites);
 
+        var art = []
+
         // TODO(developer): Process saved files here
         for (const file in uploads) {
-            console.log(uploads[file]);
+            var ascii = await p2a.convert(uploads[file], { height: 50, width: 100 }, 'gscale_70')
+            art.push(ascii)
             
             fs.unlinkSync(uploads[file]);
 
         }
-        res.send();
+        res.send(art);
     });
 
     busboy.end(req.rawBody);
