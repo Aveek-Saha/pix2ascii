@@ -12,7 +12,7 @@ const p2a = require('./img2ascii.js')
 const app = express();
 
 const runtimeOpts = {
-    timeoutSeconds: 300
+    timeoutSeconds: 120
 }
 
 // Automatically allow cross-origin requests
@@ -78,4 +78,4 @@ app.post('/', (req, res) => {
 });
 
 // Expose Express API as a single Cloud Function:
-exports.widgets = functions.runWith(runtimeOpts).https.onRequest(app);
+exports.ascii = functions.runWith(runtimeOpts).https.onRequest(app);
