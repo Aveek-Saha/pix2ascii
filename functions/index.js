@@ -33,7 +33,7 @@ app.post('/', (req, res) => {
 
     busboy.on('field', (fieldname, val) => {
         // TODO(developer): Process submitted field values here
-        console.log(`Processed field ${fieldname}: ${val}.`);
+        // console.log(`Processed field ${fieldname}: ${val}.`);
         fields[fieldname] = val;
     });
 
@@ -41,7 +41,7 @@ app.post('/', (req, res) => {
 
     // This code will process each file uploaded.
     busboy.on('file', (fieldname, file, filename) => {
-        console.log(`Processed file ${filename}`);
+        // console.log(`Processed file ${filename}`);
         const filepath = path.join(tmpdir, filename);
         uploads[fieldname] = filepath;
 
