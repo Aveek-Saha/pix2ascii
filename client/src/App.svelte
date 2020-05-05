@@ -3,6 +3,8 @@
 	let generated = false
 	let art = ""
 
+	var clipboard = new ClipboardJS('.copy');
+
 	function sendForm() {
 		console.log(files[0], width, chars);
 		var formData = new FormData();
@@ -88,7 +90,7 @@
 			<form>
 				<fieldset>
 				<legend>ASCII Art</legend>
-				<div style="font-size:15px; font-family: monospace;">
+				<div style="font-size:15px; font-family: monospace;" id="art">
 					{art}
 				</div>
 				</fieldset>
@@ -98,7 +100,7 @@
 		</div>
 		<div class="column column-20">
 		<br>
-			<button class="btn btn-primary">
+			<button class="btn btn-default copy" data-clipboard-text={art}>
 				Copy to clipboard
 			</button>
 		</div>
