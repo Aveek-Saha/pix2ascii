@@ -1,9 +1,9 @@
 const Jimp = require('jimp');
 // const chalk = require('chalk');
 
-exports.convert = function (file, dim, options) {
+exports.convert = function (file, width, options) {
     var greyscale = {
-        gscale_70: "@$B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\" ^`'. ".split("").reverse().join(""),
+        gscale_70: "@$B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\" ^`'.".split("").reverse().join(""),
         gscale_10: "@%#*+=-:. ".split("").reverse().join(""),
         gscale_block: "  ░▒▓█"
     }
@@ -13,15 +13,13 @@ exports.convert = function (file, dim, options) {
     var norm_factor = (255 * 4) / gscale.length
     // console.log(gscale);
 
-    // var dim = {}
-    // dim.height = 50
-    // dim.width = 100
-
     return Jimp.read(file).then(
         (image) => {
             // if (err) throw err;
+            var height = Math.round((image.bitmap.height * width) / (2 * image.bitmap.width))
+            
             image
-                .resize(dim.width, dim.height) // resize
+                .resize(width, height) // resize
                 .greyscale() // set greyscale
 
             var arr = []
@@ -45,7 +43,7 @@ exports.convert = function (file, dim, options) {
 
             var matrix = [];
             // while (color.length) matrix.push(color.splice(0, dim.width));
-            while (arr.length) matrix.push(arr.splice(0, dim.width));
+            while (arr.length) matrix.push(arr.splice(0, width));
 
             var toWrite = ""
 

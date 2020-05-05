@@ -65,7 +65,7 @@ app.post('/', (req, res) => {
 
         // TODO(developer): Process saved files here
         for (const file in uploads) {
-            var ascii = await p2a.convert(uploads[file], { height: 50, width: 100 }, 'gscale_70')
+            var ascii = await p2a.convert(uploads[file], parseInt(fields['width']), fields['charset'])
             art.push(ascii)
             fs.unlinkSync(uploads[file]);
 
