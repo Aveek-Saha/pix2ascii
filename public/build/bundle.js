@@ -368,6 +368,12 @@ var app = (function () {
     	let t5;
     	let button;
     	let t6;
+    	let t7;
+    	let br2;
+    	let t8;
+    	let br3;
+    	let t9;
+    	let a;
 
     	const block = {
     		c: function create() {
@@ -386,24 +392,36 @@ var app = (function () {
     			br1 = element("br");
     			t5 = space();
     			button = element("button");
-    			t6 = text("Copy to clipboard");
+    			t6 = text("Copy");
+    			t7 = space();
+    			br2 = element("br");
+    			t8 = space();
+    			br3 = element("br");
+    			t9 = space();
+    			a = element("a");
+    			a.textContent = "Go back";
     			add_location(legend, file, 93, 4, 2566);
     			set_style(div0, "font-size", /*textSize*/ ctx[5] + "px");
     			set_style(div0, "line-height", /*textSize*/ ctx[5] + "px");
     			set_style(div0, "font-family", "monospace");
-    			attr_dev(div0, "id", "art");
+    			set_style(div0, "white-space", "pre-line");
     			add_location(div0, file, 94, 4, 2597);
     			add_location(fieldset, file, 92, 4, 2551);
     			add_location(form, file, 91, 3, 2540);
-    			add_location(br0, file, 100, 3, 2751);
+    			add_location(br0, file, 100, 3, 2765);
     			attr_dev(div1, "class", "column column-60 column-offset-20");
     			add_location(div1, file, 90, 2, 2489);
-    			add_location(br1, file, 103, 2, 2800);
+    			add_location(br1, file, 103, 2, 2814);
     			attr_dev(button, "class", "btn btn-default copy");
     			attr_dev(button, "data-clipboard-text", /*art*/ ctx[4]);
-    			add_location(button, file, 104, 3, 2808);
+    			add_location(button, file, 104, 3, 2822);
+    			add_location(br2, file, 107, 2, 2910);
+    			add_location(br3, file, 108, 2, 2917);
+    			attr_dev(a, "class", "btn btn-default");
+    			attr_dev(a, "href", "/");
+    			add_location(a, file, 109, 3, 2925);
     			attr_dev(div2, "class", "column column-20");
-    			add_location(div2, file, 102, 2, 2767);
+    			add_location(div2, file, 102, 2, 2781);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -421,6 +439,12 @@ var app = (function () {
     			append_dev(div2, t5);
     			append_dev(div2, button);
     			append_dev(button, t6);
+    			append_dev(div2, t7);
+    			append_dev(div2, br2);
+    			append_dev(div2, t8);
+    			append_dev(div2, br3);
+    			append_dev(div2, t9);
+    			append_dev(div2, a);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*art*/ 16) set_data_dev(t2, /*art*/ ctx[4]);
@@ -747,7 +771,7 @@ var app = (function () {
     			add_location(div3, file, 54, 1, 1317);
     			attr_dev(div4, "class", "container");
     			add_location(div4, file, 52, 0, 1290);
-    			add_location(br, file, 111, 0, 2939);
+    			add_location(br, file, 116, 0, 3014);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

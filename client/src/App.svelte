@@ -92,7 +92,7 @@
 			<form>
 				<fieldset>
 				<legend>ASCII Art</legend>
-				<div style="font-size:{textSize}px; line-height: {textSize}px; font-family: monospace;" id="art">
+				<div style="font-size:{textSize}px; line-height: {textSize}px; font-family: monospace; white-space: pre-line;">
 					{art}
 				</div>
 				</fieldset>
@@ -103,8 +103,13 @@
 		<div class="column column-20">
 		<br>
 			<button class="btn btn-default copy" data-clipboard-text={art}>
-				Copy to clipboard
+				Copy
 			</button>
+		<br>
+		<br>
+			<a class="btn btn-default" href="/">
+				Go back
+			</a>
 		</div>
 		{/if}
 	</div>
