@@ -268,13 +268,6 @@ var app = (function () {
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
     }
-    function set_data_dev(text, data) {
-        data = '' + data;
-        if (text.data === data)
-            return;
-        dispatch_dev("SvelteDOMSetData", { node: text, data });
-        text.data = data;
-    }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
             if (!~keys.indexOf(slot_key)) {
@@ -304,60 +297,188 @@ var app = (function () {
     const file = "src\\App.svelte";
 
     function create_fragment(ctx) {
-    	let main;
-    	let h1;
-    	let t0;
-    	let t1;
-    	let t2;
-    	let t3;
-    	let p;
-    	let t4;
+    	let div2;
+    	let div1;
+    	let div0;
     	let a;
+    	let t1;
+    	let div9;
+    	let div8;
+    	let div6;
+    	let form0;
+    	let fieldset0;
+    	let legend0;
+    	let t3;
+    	let div3;
+    	let label0;
+    	let t5;
+    	let input;
     	let t6;
+    	let div4;
+    	let label1;
+    	let t8;
+    	let select;
+    	let option0;
+    	let option1;
+    	let option2;
+    	let t12;
+    	let div5;
+    	let button;
+    	let t14;
+    	let div7;
+    	let form1;
+    	let fieldset1;
+    	let legend1;
 
     	const block = {
     		c: function create() {
-    			main = element("main");
-    			h1 = element("h1");
-    			t0 = text("Hello ");
-    			t1 = text(/*name*/ ctx[0]);
-    			t2 = text("!");
-    			t3 = space();
-    			p = element("p");
-    			t4 = text("Visit the ");
+    			div2 = element("div");
+    			div1 = element("div");
+    			div0 = element("div");
     			a = element("a");
-    			a.textContent = "Svelte tutorial";
-    			t6 = text(" to learn how to build Svelte apps.");
-    			attr_dev(h1, "class", "svelte-1tky8bj");
-    			add_location(h1, file, 5, 1, 46);
-    			attr_dev(a, "href", "https://svelte.dev/tutorial");
-    			add_location(a, file, 6, 14, 83);
-    			add_location(p, file, 6, 1, 70);
-    			attr_dev(main, "class", "svelte-1tky8bj");
-    			add_location(main, file, 4, 0, 38);
+    			a.textContent = "Pix 2 Ascii";
+    			t1 = space();
+    			div9 = element("div");
+    			div8 = element("div");
+    			div6 = element("div");
+    			form0 = element("form");
+    			fieldset0 = element("fieldset");
+    			legend0 = element("legend");
+    			legend0.textContent = "Upload Image";
+    			t3 = space();
+    			div3 = element("div");
+    			label0 = element("label");
+    			label0.textContent = "Pick an image:";
+    			t5 = space();
+    			input = element("input");
+    			t6 = space();
+    			div4 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Characterset:";
+    			t8 = space();
+    			select = element("select");
+    			option0 = element("option");
+    			option0.textContent = "Option 01 ";
+    			option1 = element("option");
+    			option1.textContent = "Option 02 ";
+    			option2 = element("option");
+    			option2.textContent = "Option 02";
+    			t12 = space();
+    			div5 = element("div");
+    			button = element("button");
+    			button.textContent = "Submit";
+    			t14 = space();
+    			div7 = element("div");
+    			form1 = element("form");
+    			fieldset1 = element("fieldset");
+    			legend1 = element("legend");
+    			legend1.textContent = "ASCII Art";
+    			attr_dev(a, "href", "/");
+    			attr_dev(a, "class", "no-style");
+    			add_location(a, file, 7, 36, 148);
+    			attr_dev(div0, "class", "logo terminal-prompt");
+    			add_location(div0, file, 7, 2, 114);
+    			attr_dev(div1, "class", "terminal-logo");
+    			add_location(div1, file, 5, 1, 69);
+    			attr_dev(div2, "class", "terminal-nav");
+    			add_location(div2, file, 4, 0, 41);
+    			add_location(legend0, file, 25, 4, 643);
+    			attr_dev(label0, "for", "file");
+    			add_location(label0, file, 27, 5, 707);
+    			attr_dev(input, "id", "file");
+    			attr_dev(input, "name", "file");
+    			attr_dev(input, "type", "file");
+    			add_location(input, file, 28, 5, 753);
+    			attr_dev(div3, "class", "form-group");
+    			add_location(div3, file, 26, 4, 677);
+    			attr_dev(label1, "for", "select");
+    			add_location(label1, file, 31, 5, 840);
+    			option0.__value = " Option 01 ";
+    			option0.value = option0.__value;
+    			add_location(option0, file, 33, 5, 928);
+    			option1.__value = " Option 02 ";
+    			option1.value = option1.__value;
+    			add_location(option1, file, 34, 5, 962);
+    			option2.__value = " Option 02 ";
+    			option2.value = option2.__value;
+    			add_location(option2, file, 35, 5, 996);
+    			attr_dev(select, "id", "select");
+    			attr_dev(select, "name", "select");
+    			add_location(select, file, 32, 5, 888);
+    			attr_dev(div4, "class", "form-group");
+    			add_location(div4, file, 30, 4, 810);
+    			attr_dev(button, "class", "btn btn-default");
+    			attr_dev(button, "type", "submit");
+    			attr_dev(button, "role", "button");
+    			attr_dev(button, "name", "submit");
+    			attr_dev(button, "id", "submit");
+    			add_location(button, file, 40, 5, 1141);
+    			attr_dev(div5, "class", "form-group");
+    			add_location(div5, file, 38, 4, 1055);
+    			add_location(fieldset0, file, 24, 4, 628);
+    			attr_dev(form0, "action", "#");
+    			attr_dev(form0, "method", "post");
+    			attr_dev(form0, "enctype", "multipart/form-data");
+    			add_location(form0, file, 23, 3, 561);
+    			attr_dev(div6, "class", "column column-40 column-offset-10");
+    			add_location(div6, file, 22, 2, 510);
+    			add_location(legend1, file, 48, 4, 1408);
+    			add_location(fieldset1, file, 47, 4, 1393);
+    			attr_dev(form1, "action", "#");
+    			attr_dev(form1, "method", "post");
+    			attr_dev(form1, "enctype", "multipart/form-data");
+    			add_location(form1, file, 46, 3, 1326);
+    			attr_dev(div7, "class", "column column-40");
+    			add_location(div7, file, 45, 2, 1292);
+    			attr_dev(div8, "class", "row");
+    			add_location(div8, file, 21, 1, 490);
+    			attr_dev(div9, "class", "container");
+    			add_location(div9, file, 19, 0, 463);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, main, anchor);
-    			append_dev(main, h1);
-    			append_dev(h1, t0);
-    			append_dev(h1, t1);
-    			append_dev(h1, t2);
-    			append_dev(main, t3);
-    			append_dev(main, p);
-    			append_dev(p, t4);
-    			append_dev(p, a);
-    			append_dev(p, t6);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, div0);
+    			append_dev(div0, a);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div9, anchor);
+    			append_dev(div9, div8);
+    			append_dev(div8, div6);
+    			append_dev(div6, form0);
+    			append_dev(form0, fieldset0);
+    			append_dev(fieldset0, legend0);
+    			append_dev(fieldset0, t3);
+    			append_dev(fieldset0, div3);
+    			append_dev(div3, label0);
+    			append_dev(div3, t5);
+    			append_dev(div3, input);
+    			append_dev(fieldset0, t6);
+    			append_dev(fieldset0, div4);
+    			append_dev(div4, label1);
+    			append_dev(div4, t8);
+    			append_dev(div4, select);
+    			append_dev(select, option0);
+    			append_dev(select, option1);
+    			append_dev(select, option2);
+    			append_dev(fieldset0, t12);
+    			append_dev(fieldset0, div5);
+    			append_dev(div5, button);
+    			append_dev(div8, t14);
+    			append_dev(div8, div7);
+    			append_dev(div7, form1);
+    			append_dev(form1, fieldset1);
+    			append_dev(fieldset1, legend1);
     		},
-    		p: function update(ctx, [dirty]) {
-    			if (dirty & /*name*/ 1) set_data_dev(t1, /*name*/ ctx[0]);
-    		},
+    		p: noop,
     		i: noop,
     		o: noop,
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(main);
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div9);
     		}
     	};
 
@@ -372,9 +493,8 @@ var app = (function () {
     	return block;
     }
 
-    function instance($$self, $$props, $$invalidate) {
-    	let { name } = $$props;
-    	const writable_props = ["name"];
+    function instance($$self, $$props) {
+    	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<App> was created with unknown prop '${key}'`);
@@ -382,28 +502,13 @@ var app = (function () {
 
     	let { $$slots = {}, $$scope } = $$props;
     	validate_slots("App", $$slots, []);
-
-    	$$self.$set = $$props => {
-    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
-    	};
-
-    	$$self.$capture_state = () => ({ name });
-
-    	$$self.$inject_state = $$props => {
-    		if ("name" in $$props) $$invalidate(0, name = $$props.name);
-    	};
-
-    	if ($$props && "$$inject" in $$props) {
-    		$$self.$inject_state($$props.$$inject);
-    	}
-
-    	return [name];
+    	return [];
     }
 
     class App extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance, create_fragment, safe_not_equal, { name: 0 });
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -411,28 +516,13 @@ var app = (function () {
     			options,
     			id: create_fragment.name
     		});
-
-    		const { ctx } = this.$$;
-    		const props = options.props || {};
-
-    		if (/*name*/ ctx[0] === undefined && !("name" in props)) {
-    			console.warn("<App> was created without expected prop 'name'");
-    		}
-    	}
-
-    	get name() {
-    		throw new Error("<App>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set name(value) {
-    		throw new Error("<App>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
 
     const app = new App({
     	target: document.body,
     	props: {
-    		name: 'world'
+    		// name: 'world'
     	}
     });
 
