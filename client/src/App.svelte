@@ -1,5 +1,10 @@
 <script>
-	// export let name;
+	let files, width, chars
+	
+	function sendForm() {
+		console.log(files, width, chars);
+		
+	}
 </script>
 
 <div class="terminal-nav">
@@ -21,36 +26,42 @@
 	
 	<div class="row">
 		<div class="column column-40 column-offset-10">
-			<form action="#"  method="post" enctype="multipart/form-data">
+			<!-- <form> -->
 				<fieldset>
 				<legend>Upload Image</legend>
 				<div class="form-group">
 					<label for="file">Pick an image:</label>
-					<input id="file" name="file" type="file">
+					<input id="file" name="file" bind:value={files} type="file">
+				</div>
+				<div class="form-group">
+					<label for="width">Number of characters in a row:</label>
+					<input id="width" name="width" type="number" bind:value={width}
+					min="100" max="500" placeholder="Range: 100 - 500">
 				</div>
 				<div class="form-group">
 					<label for="select">Characterset: </label>
-					<select id="select" name="select">
-					<option> Option 01 </option>
-					<option> Option 02 </option>
-					<option> Option 02 </option>
+					<select id="select" name="select" bind:value={chars} >
+					<option value="gscale_70"> Grayscale 70 </option>
+					<option value="gscale_10"> Grayscale 10 </option>
+					<option value="gscale_block"> Blocks </option>
+
 					</select>
 				</div>
-				<div class="form-group">
-					<!-- <label for="submit">Input Button:</label> -->
-					<button class="btn btn-default" type="submit" role="button" name="submit" id="submit">Submit</button>
-				</div>
+				{#if files!== undefined && width < 501 && width > 99 && chars!== ""}
+					<button class="btn btn-primary"
+					on:click={sendForm}>Generate</button>
+				{:else}
+					<button class="btn btn-error btn-ghost" disabled>Generate</button>
+				{/if}
+
+					
 				</fieldset>
-			</form>
+			<!-- </form> -->
 		</div>
 		<div class="column column-40">
-			<form action="#"  method="post" enctype="multipart/form-data">
+			<form>
 				<fieldset>
 				<legend>ASCII Art</legend>
-				    <!-- <div class="form-group">
-						<label for="tarea">Textarea:</label>
-						<textarea id="tarea" cols="30" rows="30" disabled name="tarea" value=""></textarea>
-					</div> -->
 				</fieldset>
 			</form>
 		</div>
