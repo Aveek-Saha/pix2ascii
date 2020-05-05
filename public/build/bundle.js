@@ -341,7 +341,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\App.svelte";
 
-    // (53:4) {:else}
+    // (73:4) {:else}
     function create_else_block(ctx) {
     	let button;
 
@@ -351,7 +351,7 @@ var app = (function () {
     			button.textContent = "Generate";
     			attr_dev(button, "class", "btn btn-error btn-ghost");
     			button.disabled = true;
-    			add_location(button, file, 53, 5, 1574);
+    			add_location(button, file, 73, 5, 2142);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -366,14 +366,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(53:4) {:else}",
+    		source: "(73:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (50:4) {#if files!== undefined && width < 501 && width > 99 && chars!== ""}
+    // (70:4) {#if files!== undefined && width < 501 && width > 99 && chars!== ""}
     function create_if_block(ctx) {
     	let button;
     	let dispose;
@@ -383,7 +383,7 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Generate";
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file, 50, 5, 1482);
+    			add_location(button, file, 70, 5, 2050);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button, anchor);
@@ -401,7 +401,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(50:4) {#if files!== undefined && width < 501 && width > 99 && chars!== \\\"\\\"}",
+    		source: "(70:4) {#if files!== undefined && width < 501 && width > 99 && chars!== \\\"\\\"}",
     		ctx
     	});
 
@@ -501,62 +501,62 @@ var app = (function () {
     			legend1.textContent = "ASCII Art";
     			attr_dev(a, "href", "/");
     			attr_dev(a, "class", "no-style");
-    			add_location(a, file, 12, 36, 219);
+    			add_location(a, file, 32, 36, 787);
     			attr_dev(div0, "class", "logo terminal-prompt");
-    			add_location(div0, file, 12, 2, 185);
+    			add_location(div0, file, 32, 2, 753);
     			attr_dev(div1, "class", "terminal-logo");
-    			add_location(div1, file, 10, 1, 140);
+    			add_location(div1, file, 30, 1, 708);
     			attr_dev(div2, "class", "terminal-nav");
-    			add_location(div2, file, 9, 0, 112);
-    			add_location(legend0, file, 30, 4, 667);
+    			add_location(div2, file, 29, 0, 680);
+    			add_location(legend0, file, 50, 4, 1235);
     			attr_dev(label0, "for", "file");
-    			add_location(label0, file, 32, 5, 731);
+    			add_location(label0, file, 52, 5, 1299);
     			attr_dev(input0, "id", "file");
     			attr_dev(input0, "name", "file");
     			attr_dev(input0, "type", "file");
-    			add_location(input0, file, 33, 5, 777);
+    			add_location(input0, file, 53, 5, 1345);
     			attr_dev(div3, "class", "form-group");
-    			add_location(div3, file, 31, 4, 701);
+    			add_location(div3, file, 51, 4, 1269);
     			attr_dev(label1, "for", "width");
-    			add_location(label1, file, 36, 5, 883);
+    			add_location(label1, file, 56, 5, 1451);
     			attr_dev(input1, "id", "width");
     			attr_dev(input1, "name", "width");
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "min", "100");
     			attr_dev(input1, "max", "500");
     			attr_dev(input1, "placeholder", "Range: 100 - 500");
-    			add_location(input1, file, 37, 5, 946);
+    			add_location(input1, file, 57, 5, 1514);
     			attr_dev(div4, "class", "form-group");
-    			add_location(div4, file, 35, 4, 853);
+    			add_location(div4, file, 55, 4, 1421);
     			attr_dev(label2, "for", "select");
-    			add_location(label2, file, 41, 5, 1112);
+    			add_location(label2, file, 61, 5, 1680);
     			option0.__value = "gscale_70";
     			option0.value = option0.__value;
-    			add_location(option0, file, 43, 5, 1220);
+    			add_location(option0, file, 63, 5, 1788);
     			option1.__value = "gscale_10";
     			option1.value = option1.__value;
-    			add_location(option1, file, 44, 5, 1275);
+    			add_location(option1, file, 64, 5, 1843);
     			option2.__value = "gscale_block";
     			option2.value = option2.__value;
-    			add_location(option2, file, 45, 5, 1330);
+    			add_location(option2, file, 65, 5, 1898);
     			attr_dev(select, "id", "select");
     			attr_dev(select, "name", "select");
     			if (/*chars*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[6].call(select));
-    			add_location(select, file, 42, 5, 1160);
+    			add_location(select, file, 62, 5, 1728);
     			attr_dev(div5, "class", "form-group");
-    			add_location(div5, file, 40, 4, 1082);
-    			add_location(fieldset0, file, 29, 4, 652);
+    			add_location(div5, file, 60, 4, 1650);
+    			add_location(fieldset0, file, 49, 4, 1220);
     			attr_dev(div6, "class", "column column-40 column-offset-10");
-    			add_location(div6, file, 27, 2, 581);
-    			add_location(legend1, file, 63, 4, 1765);
-    			add_location(fieldset1, file, 62, 4, 1750);
-    			add_location(form, file, 61, 3, 1739);
+    			add_location(div6, file, 47, 2, 1149);
+    			add_location(legend1, file, 83, 4, 2333);
+    			add_location(fieldset1, file, 82, 4, 2318);
+    			add_location(form, file, 81, 3, 2307);
     			attr_dev(div7, "class", "column column-40");
-    			add_location(div7, file, 60, 2, 1705);
+    			add_location(div7, file, 80, 2, 2273);
     			attr_dev(div8, "class", "row");
-    			add_location(div8, file, 26, 1, 561);
+    			add_location(div8, file, 46, 1, 1129);
     			attr_dev(div9, "class", "container");
-    			add_location(div9, file, 24, 0, 534);
+    			add_location(div9, file, 44, 0, 1102);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -654,7 +654,26 @@ var app = (function () {
     	let files, width, chars;
 
     	function sendForm() {
-    		console.log(files, width, chars);
+    		console.log(files[0], width, chars);
+    		var formData = new FormData();
+    		formData.append("image", files[0]);
+    		formData.append("width", width);
+    		formData.append("charset", chars);
+    		var request = new XMLHttpRequest();
+    		request.open("POST", "http://localhost:5001/pix2ascii/us-central1/ascii");
+    		request.send(formData);
+
+    		request.onreadystatechange = function () {
+    			if (request.readyState === XMLHttpRequest.DONE) {
+    				var status = request.status;
+
+    				if (status === 0 || status >= 200 && status < 400) {
+    					console.log(request.responseText);
+    				} else {
+    					console.log("Error");
+    				}
+    			}
+    		};
     	}
 
     	const writable_props = [];
@@ -667,7 +686,7 @@ var app = (function () {
     	validate_slots("App", $$slots, []);
 
     	function input0_change_handler() {
-    		files = this.value;
+    		files = this.files;
     		$$invalidate(0, files);
     	}
 

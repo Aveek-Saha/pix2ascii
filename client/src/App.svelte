@@ -2,7 +2,27 @@
 	let files, width, chars
 	
 	function sendForm() {
-		console.log(files, width, chars);
+		console.log(files[0], width, chars);
+		var formData = new FormData();
+
+		formData.append("image", files[0]);
+		formData.append("width", width);
+		formData.append("charset", chars);
+
+		var request = new XMLHttpRequest();
+		request.open("POST", "http://localhost:5001/pix2ascii/us-central1/ascii");
+		request.send(formData);
+		request.onreadystatechange = function () {
+		if(request.readyState === XMLHttpRequest.DONE) {
+			var status = request.status;
+			if (status === 0 || (status >= 200 && status < 400)) {
+			console.log(request.responseText);
+			} else {
+			console.log("Error");
+			
+			}
+		}
+		};
 		
 	}
 </script>
@@ -31,7 +51,7 @@
 				<legend>Upload Image</legend>
 				<div class="form-group">
 					<label for="file">Pick an image:</label>
-					<input id="file" name="file" bind:value={files} type="file">
+					<input id="file" name="file" bind:files={files} type="file">
 				</div>
 				<div class="form-group">
 					<label for="width">Number of characters in a row:</label>
