@@ -2,9 +2,9 @@ html, body {
    margin: 0px;
 } 
 
-/* .container {
-	margin: 1%;
-} */
+.terminal-nav {
+	padding: 0% 2% 0% 2%;
+}
 
 .column {
 	/* text-align: center; */

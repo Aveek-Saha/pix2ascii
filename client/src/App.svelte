@@ -37,24 +37,24 @@
 
 <div class="terminal-nav">
 	<div class="terminal-logo">
-	<!-- <h1> -->
+	<h3>
 		<div class="logo terminal-prompt"><a href="/" class="no-style">Pix 2 Ascii</a></div>
-	<!-- </h1> -->
+	</h3>
 	</div>
-	<!-- <nav class="terminal-menu">
+	<nav class="terminal-menu">
 	<ul>
-		<li><a class="menu-item" href="#">Item #1</a></li>
-		<li><a class="menu-item active" href="#">Active Item #2</a></li>
-		<li><a class="menu-item" href="#">Item #3</a></li>
+		<li><a class="menu-item" href="https://github.com/Aveek-Saha/pix2ascii"><h3>#GitHub</h3></a></li>
+		<!-- <li><a class="menu-item" href="https://home.aveek.io"><h2>#Portfolio</h2></a></li> -->
 	</ul>
-	</nav> -->
+	</nav>
 </div>
 
 <div class="container">
 	
 	<div class="row">
 	{#if !generated}
-		<div class="column column-50 column-offset-25">
+		<div class="column column-25"></div>
+		<div class="column column-50">
 			<!-- <form> -->
 				<fieldset>
 				<legend>Upload Image</legend>
@@ -88,7 +88,9 @@
 			<!-- </form> -->
 		</div>
 		{:else}
-		<div class="column column-60 column-offset-20">
+
+		<div class="column column-20"></div>
+		<div class="column column-60">
 			<form>
 				<fieldset>
 				<legend>ASCII Art</legend>

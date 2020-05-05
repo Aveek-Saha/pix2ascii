@@ -353,108 +353,116 @@ var app = (function () {
 
     // (90:2) {:else}
     function create_else_block_1(ctx) {
-    	let div1;
+    	let div0;
+    	let t0;
+    	let div2;
     	let form;
     	let fieldset;
     	let legend;
-    	let t1;
-    	let div0;
     	let t2;
+    	let div1;
     	let t3;
-    	let br0;
     	let t4;
-    	let div2;
-    	let br1;
+    	let br0;
     	let t5;
-    	let button;
+    	let div3;
+    	let br1;
     	let t6;
+    	let button;
     	let t7;
-    	let br2;
     	let t8;
-    	let br3;
+    	let br2;
     	let t9;
+    	let br3;
+    	let t10;
     	let a;
 
     	const block = {
     		c: function create() {
-    			div1 = element("div");
+    			div0 = element("div");
+    			t0 = space();
+    			div2 = element("div");
     			form = element("form");
     			fieldset = element("fieldset");
     			legend = element("legend");
     			legend.textContent = "ASCII Art";
-    			t1 = space();
-    			div0 = element("div");
-    			t2 = text(/*art*/ ctx[4]);
-    			t3 = space();
-    			br0 = element("br");
+    			t2 = space();
+    			div1 = element("div");
+    			t3 = text(/*art*/ ctx[4]);
     			t4 = space();
-    			div2 = element("div");
-    			br1 = element("br");
+    			br0 = element("br");
     			t5 = space();
+    			div3 = element("div");
+    			br1 = element("br");
+    			t6 = space();
     			button = element("button");
-    			t6 = text("Copy");
-    			t7 = space();
-    			br2 = element("br");
+    			t7 = text("Copy");
     			t8 = space();
-    			br3 = element("br");
+    			br2 = element("br");
     			t9 = space();
+    			br3 = element("br");
+    			t10 = space();
     			a = element("a");
     			a.textContent = "Go back";
-    			add_location(legend, file, 93, 4, 2566);
-    			set_style(div0, "font-size", /*textSize*/ ctx[5] + "px");
-    			set_style(div0, "line-height", /*textSize*/ ctx[5] + "px");
-    			set_style(div0, "font-family", "monospace");
-    			set_style(div0, "white-space", "pre-line");
-    			add_location(div0, file, 94, 4, 2597);
-    			add_location(fieldset, file, 92, 4, 2551);
-    			add_location(form, file, 91, 3, 2540);
-    			add_location(br0, file, 100, 3, 2765);
-    			attr_dev(div1, "class", "column column-60 column-offset-20");
-    			add_location(div1, file, 90, 2, 2489);
-    			add_location(br1, file, 103, 2, 2814);
+    			attr_dev(div0, "class", "column column-20");
+    			add_location(div0, file, 91, 2, 2506);
+    			add_location(legend, file, 95, 4, 2605);
+    			set_style(div1, "font-size", /*textSize*/ ctx[5] + "px");
+    			set_style(div1, "line-height", /*textSize*/ ctx[5] + "px");
+    			set_style(div1, "font-family", "monospace");
+    			set_style(div1, "white-space", "pre-line");
+    			add_location(div1, file, 96, 4, 2636);
+    			add_location(fieldset, file, 94, 4, 2590);
+    			add_location(form, file, 93, 3, 2579);
+    			add_location(br0, file, 102, 3, 2804);
+    			attr_dev(div2, "class", "column column-60");
+    			add_location(div2, file, 92, 2, 2545);
+    			add_location(br1, file, 105, 2, 2853);
     			attr_dev(button, "class", "btn btn-default copy");
     			attr_dev(button, "data-clipboard-text", /*art*/ ctx[4]);
-    			add_location(button, file, 104, 3, 2822);
-    			add_location(br2, file, 107, 2, 2910);
-    			add_location(br3, file, 108, 2, 2917);
+    			add_location(button, file, 106, 3, 2861);
+    			add_location(br2, file, 109, 2, 2949);
+    			add_location(br3, file, 110, 2, 2956);
     			attr_dev(a, "class", "btn btn-default");
     			attr_dev(a, "href", "/");
-    			add_location(a, file, 109, 3, 2925);
-    			attr_dev(div2, "class", "column column-20");
-    			add_location(div2, file, 102, 2, 2781);
+    			add_location(a, file, 111, 3, 2964);
+    			attr_dev(div3, "class", "column column-20");
+    			add_location(div3, file, 104, 2, 2820);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div1, anchor);
-    			append_dev(div1, form);
+    			insert_dev(target, div0, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, form);
     			append_dev(form, fieldset);
     			append_dev(fieldset, legend);
-    			append_dev(fieldset, t1);
-    			append_dev(fieldset, div0);
-    			append_dev(div0, t2);
+    			append_dev(fieldset, t2);
+    			append_dev(fieldset, div1);
     			append_dev(div1, t3);
-    			append_dev(div1, br0);
-    			insert_dev(target, t4, anchor);
-    			insert_dev(target, div2, anchor);
-    			append_dev(div2, br1);
-    			append_dev(div2, t5);
-    			append_dev(div2, button);
-    			append_dev(button, t6);
-    			append_dev(div2, t7);
-    			append_dev(div2, br2);
-    			append_dev(div2, t8);
-    			append_dev(div2, br3);
-    			append_dev(div2, t9);
-    			append_dev(div2, a);
+    			append_dev(div2, t4);
+    			append_dev(div2, br0);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, br1);
+    			append_dev(div3, t6);
+    			append_dev(div3, button);
+    			append_dev(button, t7);
+    			append_dev(div3, t8);
+    			append_dev(div3, br2);
+    			append_dev(div3, t9);
+    			append_dev(div3, br3);
+    			append_dev(div3, t10);
+    			append_dev(div3, a);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*art*/ 16) set_data_dev(t2, /*art*/ ctx[4]);
+    			if (dirty & /*art*/ 16) set_data_dev(t3, /*art*/ ctx[4]);
 
     			if (dirty & /*textSize*/ 32) {
-    				set_style(div0, "font-size", /*textSize*/ ctx[5] + "px");
+    				set_style(div1, "font-size", /*textSize*/ ctx[5] + "px");
     			}
 
     			if (dirty & /*textSize*/ 32) {
-    				set_style(div0, "line-height", /*textSize*/ ctx[5] + "px");
+    				set_style(div1, "line-height", /*textSize*/ ctx[5] + "px");
     			}
 
     			if (dirty & /*art*/ 16) {
@@ -462,9 +470,11 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div1);
-    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(div3);
     		}
     	};
 
@@ -479,30 +489,32 @@ var app = (function () {
     	return block;
     }
 
-    // (56:1) {#if !generated}
+    // (55:1) {#if !generated}
     function create_if_block(ctx) {
-    	let div3;
+    	let div0;
+    	let t0;
+    	let div4;
     	let fieldset;
     	let legend;
-    	let t1;
-    	let div0;
-    	let label0;
-    	let t3;
-    	let input0;
-    	let t4;
+    	let t2;
     	let div1;
-    	let label1;
-    	let t6;
-    	let input1;
-    	let t7;
+    	let label0;
+    	let t4;
+    	let input0;
+    	let t5;
     	let div2;
+    	let label1;
+    	let t7;
+    	let input1;
+    	let t8;
+    	let div3;
     	let label2;
-    	let t9;
+    	let t10;
     	let select;
     	let option0;
     	let option1;
     	let option2;
-    	let t13;
+    	let t14;
     	let dispose;
 
     	function select_block_type_1(ctx, dirty) {
@@ -515,27 +527,29 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div3 = element("div");
+    			div0 = element("div");
+    			t0 = space();
+    			div4 = element("div");
     			fieldset = element("fieldset");
     			legend = element("legend");
     			legend.textContent = "Upload Image";
-    			t1 = space();
-    			div0 = element("div");
+    			t2 = space();
+    			div1 = element("div");
     			label0 = element("label");
     			label0.textContent = "Pick an image:";
-    			t3 = space();
-    			input0 = element("input");
     			t4 = space();
-    			div1 = element("div");
+    			input0 = element("input");
+    			t5 = space();
+    			div2 = element("div");
     			label1 = element("label");
     			label1.textContent = "Number of characters in a row:";
-    			t6 = space();
-    			input1 = element("input");
     			t7 = space();
-    			div2 = element("div");
+    			input1 = element("input");
+    			t8 = space();
+    			div3 = element("div");
     			label2 = element("label");
     			label2.textContent = "Characterset:";
-    			t9 = space();
+    			t10 = space();
     			select = element("select");
     			option0 = element("option");
     			option0.textContent = "Grayscale 70 ";
@@ -543,74 +557,78 @@ var app = (function () {
     			option1.textContent = "Grayscale 10 ";
     			option2 = element("option");
     			option2.textContent = "Blocks";
-    			t13 = space();
+    			t14 = space();
     			if_block.c();
-    			add_location(legend, file, 59, 4, 1441);
+    			attr_dev(div0, "class", "column column-25");
+    			add_location(div0, file, 55, 2, 1349);
+    			add_location(legend, file, 59, 4, 1457);
     			attr_dev(label0, "for", "file");
-    			add_location(label0, file, 61, 5, 1505);
+    			add_location(label0, file, 61, 5, 1521);
     			attr_dev(input0, "id", "file");
     			attr_dev(input0, "name", "file");
     			attr_dev(input0, "type", "file");
-    			add_location(input0, file, 62, 5, 1551);
-    			attr_dev(div0, "class", "form-group");
-    			add_location(div0, file, 60, 4, 1475);
+    			add_location(input0, file, 62, 5, 1567);
+    			attr_dev(div1, "class", "form-group");
+    			add_location(div1, file, 60, 4, 1491);
     			attr_dev(label1, "for", "width");
-    			add_location(label1, file, 65, 5, 1657);
+    			add_location(label1, file, 65, 5, 1673);
     			attr_dev(input1, "id", "width");
     			attr_dev(input1, "name", "width");
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "min", "100");
     			attr_dev(input1, "max", "500");
     			attr_dev(input1, "placeholder", "Range: 100 - 500");
-    			add_location(input1, file, 66, 5, 1720);
-    			attr_dev(div1, "class", "form-group");
-    			add_location(div1, file, 64, 4, 1627);
+    			add_location(input1, file, 66, 5, 1736);
+    			attr_dev(div2, "class", "form-group");
+    			add_location(div2, file, 64, 4, 1643);
     			attr_dev(label2, "for", "select");
-    			add_location(label2, file, 70, 5, 1886);
+    			add_location(label2, file, 70, 5, 1902);
     			option0.__value = "gscale_70";
     			option0.value = option0.__value;
-    			add_location(option0, file, 72, 5, 1994);
+    			add_location(option0, file, 72, 5, 2010);
     			option1.__value = "gscale_10";
     			option1.value = option1.__value;
-    			add_location(option1, file, 73, 5, 2049);
+    			add_location(option1, file, 73, 5, 2065);
     			option2.__value = "gscale_block";
     			option2.value = option2.__value;
-    			add_location(option2, file, 74, 5, 2104);
+    			add_location(option2, file, 74, 5, 2120);
     			attr_dev(select, "id", "select");
     			attr_dev(select, "name", "select");
     			if (/*chars*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[10].call(select));
-    			add_location(select, file, 71, 5, 1934);
-    			attr_dev(div2, "class", "form-group");
-    			add_location(div2, file, 69, 4, 1856);
-    			add_location(fieldset, file, 58, 4, 1426);
-    			attr_dev(div3, "class", "column column-50 column-offset-25");
-    			add_location(div3, file, 56, 2, 1355);
+    			add_location(select, file, 71, 5, 1950);
+    			attr_dev(div3, "class", "form-group");
+    			add_location(div3, file, 69, 4, 1872);
+    			add_location(fieldset, file, 58, 4, 1442);
+    			attr_dev(div4, "class", "column column-50");
+    			add_location(div4, file, 56, 2, 1388);
     		},
     		m: function mount(target, anchor, remount) {
-    			insert_dev(target, div3, anchor);
-    			append_dev(div3, fieldset);
+    			insert_dev(target, div0, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, fieldset);
     			append_dev(fieldset, legend);
-    			append_dev(fieldset, t1);
-    			append_dev(fieldset, div0);
-    			append_dev(div0, label0);
-    			append_dev(div0, t3);
-    			append_dev(div0, input0);
-    			append_dev(fieldset, t4);
+    			append_dev(fieldset, t2);
     			append_dev(fieldset, div1);
-    			append_dev(div1, label1);
-    			append_dev(div1, t6);
-    			append_dev(div1, input1);
-    			set_input_value(input1, /*width*/ ctx[1]);
-    			append_dev(fieldset, t7);
+    			append_dev(div1, label0);
+    			append_dev(div1, t4);
+    			append_dev(div1, input0);
+    			append_dev(fieldset, t5);
     			append_dev(fieldset, div2);
-    			append_dev(div2, label2);
-    			append_dev(div2, t9);
-    			append_dev(div2, select);
+    			append_dev(div2, label1);
+    			append_dev(div2, t7);
+    			append_dev(div2, input1);
+    			set_input_value(input1, /*width*/ ctx[1]);
+    			append_dev(fieldset, t8);
+    			append_dev(fieldset, div3);
+    			append_dev(div3, label2);
+    			append_dev(div3, t10);
+    			append_dev(div3, select);
     			append_dev(select, option0);
     			append_dev(select, option1);
     			append_dev(select, option2);
     			select_option(select, /*chars*/ ctx[2]);
-    			append_dev(fieldset, t13);
+    			append_dev(fieldset, t14);
     			if_block.m(fieldset, null);
     			if (remount) run_all(dispose);
 
@@ -642,7 +660,9 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div3);
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div4);
     			if_block.d();
     			run_all(dispose);
     		}
@@ -652,7 +672,7 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(56:1) {#if !generated}",
+    		source: "(55:1) {#if !generated}",
     		ctx
     	});
 
@@ -669,7 +689,7 @@ var app = (function () {
     			button.textContent = "Generate";
     			attr_dev(button, "class", "btn btn-error btn-ghost");
     			button.disabled = true;
-    			add_location(button, file, 82, 5, 2348);
+    			add_location(button, file, 82, 5, 2364);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -701,7 +721,7 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Generate";
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file, 79, 5, 2256);
+    			add_location(button, file, 79, 5, 2272);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button, anchor);
@@ -729,12 +749,19 @@ var app = (function () {
     function create_fragment(ctx) {
     	let div2;
     	let div1;
+    	let h30;
     	let div0;
-    	let a;
+    	let a0;
     	let t1;
+    	let nav;
+    	let ul;
+    	let li;
+    	let a1;
+    	let h31;
+    	let t3;
     	let div4;
     	let div3;
-    	let t2;
+    	let t4;
     	let br;
 
     	function select_block_type(ctx, dirty) {
@@ -749,29 +776,46 @@ var app = (function () {
     		c: function create() {
     			div2 = element("div");
     			div1 = element("div");
+    			h30 = element("h3");
     			div0 = element("div");
-    			a = element("a");
-    			a.textContent = "Pix 2 Ascii";
+    			a0 = element("a");
+    			a0.textContent = "Pix 2 Ascii";
     			t1 = space();
+    			nav = element("nav");
+    			ul = element("ul");
+    			li = element("li");
+    			a1 = element("a");
+    			h31 = element("h3");
+    			h31.textContent = "#GitHub";
+    			t3 = space();
     			div4 = element("div");
     			div3 = element("div");
     			if_block.c();
-    			t2 = space();
+    			t4 = space();
     			br = element("br");
-    			attr_dev(a, "href", "/");
-    			attr_dev(a, "class", "no-style");
-    			add_location(a, file, 40, 36, 975);
+    			attr_dev(a0, "href", "/");
+    			attr_dev(a0, "class", "no-style");
+    			add_location(a0, file, 40, 36, 966);
     			attr_dev(div0, "class", "logo terminal-prompt");
-    			add_location(div0, file, 40, 2, 941);
+    			add_location(div0, file, 40, 2, 932);
+    			add_location(h30, file, 39, 1, 925);
     			attr_dev(div1, "class", "terminal-logo");
     			add_location(div1, file, 38, 1, 896);
+    			add_location(h31, file, 45, 74, 1141);
+    			attr_dev(a1, "class", "menu-item");
+    			attr_dev(a1, "href", "https://github.com/Aveek-Saha/pix2ascii");
+    			add_location(a1, file, 45, 6, 1073);
+    			add_location(li, file, 45, 2, 1069);
+    			add_location(ul, file, 44, 1, 1062);
+    			attr_dev(nav, "class", "terminal-menu");
+    			add_location(nav, file, 43, 1, 1033);
     			attr_dev(div2, "class", "terminal-nav");
     			add_location(div2, file, 37, 0, 868);
     			attr_dev(div3, "class", "row");
-    			add_location(div3, file, 54, 1, 1317);
+    			add_location(div3, file, 53, 1, 1311);
     			attr_dev(div4, "class", "container");
-    			add_location(div4, file, 52, 0, 1290);
-    			add_location(br, file, 116, 0, 3014);
+    			add_location(div4, file, 51, 0, 1284);
+    			add_location(br, file, 118, 0, 3053);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -779,13 +823,20 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
     			append_dev(div2, div1);
-    			append_dev(div1, div0);
-    			append_dev(div0, a);
-    			insert_dev(target, t1, anchor);
+    			append_dev(div1, h30);
+    			append_dev(h30, div0);
+    			append_dev(div0, a0);
+    			append_dev(div2, t1);
+    			append_dev(div2, nav);
+    			append_dev(nav, ul);
+    			append_dev(ul, li);
+    			append_dev(li, a1);
+    			append_dev(a1, h31);
+    			insert_dev(target, t3, anchor);
     			insert_dev(target, div4, anchor);
     			append_dev(div4, div3);
     			if_block.m(div3, null);
-    			insert_dev(target, t2, anchor);
+    			insert_dev(target, t4, anchor);
     			insert_dev(target, br, anchor);
     		},
     		p: function update(ctx, [dirty]) {
@@ -805,10 +856,10 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
-    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(div4);
     			if_block.d();
-    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(t4);
     			if (detaching) detach_dev(br);
     		}
     	};
