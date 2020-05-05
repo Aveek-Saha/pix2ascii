@@ -351,7 +351,7 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\App.svelte";
 
-    // (88:2) {:else}
+    // (90:2) {:else}
     function create_else_block_1(ctx) {
     	let div1;
     	let form;
@@ -387,22 +387,23 @@ var app = (function () {
     			t5 = space();
     			button = element("button");
     			t6 = text("Copy to clipboard");
-    			add_location(legend, file, 91, 4, 2511);
-    			set_style(div0, "font-size", "15px");
+    			add_location(legend, file, 93, 4, 2566);
+    			set_style(div0, "font-size", /*textSize*/ ctx[5] + "px");
+    			set_style(div0, "line-height", /*textSize*/ ctx[5] + "px");
     			set_style(div0, "font-family", "monospace");
     			attr_dev(div0, "id", "art");
-    			add_location(div0, file, 92, 4, 2542);
-    			add_location(fieldset, file, 90, 4, 2496);
-    			add_location(form, file, 89, 3, 2485);
-    			add_location(br0, file, 98, 3, 2661);
+    			add_location(div0, file, 94, 4, 2597);
+    			add_location(fieldset, file, 92, 4, 2551);
+    			add_location(form, file, 91, 3, 2540);
+    			add_location(br0, file, 100, 3, 2751);
     			attr_dev(div1, "class", "column column-60 column-offset-20");
-    			add_location(div1, file, 88, 2, 2434);
-    			add_location(br1, file, 101, 2, 2710);
+    			add_location(div1, file, 90, 2, 2489);
+    			add_location(br1, file, 103, 2, 2800);
     			attr_dev(button, "class", "btn btn-default copy");
     			attr_dev(button, "data-clipboard-text", /*art*/ ctx[4]);
-    			add_location(button, file, 102, 3, 2718);
+    			add_location(button, file, 104, 3, 2808);
     			attr_dev(div2, "class", "column column-20");
-    			add_location(div2, file, 100, 2, 2677);
+    			add_location(div2, file, 102, 2, 2767);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div1, anchor);
@@ -424,6 +425,14 @@ var app = (function () {
     		p: function update(ctx, dirty) {
     			if (dirty & /*art*/ 16) set_data_dev(t2, /*art*/ ctx[4]);
 
+    			if (dirty & /*textSize*/ 32) {
+    				set_style(div0, "font-size", /*textSize*/ ctx[5] + "px");
+    			}
+
+    			if (dirty & /*textSize*/ 32) {
+    				set_style(div0, "line-height", /*textSize*/ ctx[5] + "px");
+    			}
+
     			if (dirty & /*art*/ 16) {
     				attr_dev(button, "data-clipboard-text", /*art*/ ctx[4]);
     			}
@@ -439,14 +448,14 @@ var app = (function () {
     		block,
     		id: create_else_block_1.name,
     		type: "else",
-    		source: "(88:2) {:else}",
+    		source: "(90:2) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (54:1) {#if !generated}
+    // (56:1) {#if !generated}
     function create_if_block(ctx) {
     	let div3;
     	let fieldset;
@@ -512,46 +521,46 @@ var app = (function () {
     			option2.textContent = "Blocks";
     			t13 = space();
     			if_block.c();
-    			add_location(legend, file, 57, 4, 1386);
+    			add_location(legend, file, 59, 4, 1441);
     			attr_dev(label0, "for", "file");
-    			add_location(label0, file, 59, 5, 1450);
+    			add_location(label0, file, 61, 5, 1505);
     			attr_dev(input0, "id", "file");
     			attr_dev(input0, "name", "file");
     			attr_dev(input0, "type", "file");
-    			add_location(input0, file, 60, 5, 1496);
+    			add_location(input0, file, 62, 5, 1551);
     			attr_dev(div0, "class", "form-group");
-    			add_location(div0, file, 58, 4, 1420);
+    			add_location(div0, file, 60, 4, 1475);
     			attr_dev(label1, "for", "width");
-    			add_location(label1, file, 63, 5, 1602);
+    			add_location(label1, file, 65, 5, 1657);
     			attr_dev(input1, "id", "width");
     			attr_dev(input1, "name", "width");
     			attr_dev(input1, "type", "number");
     			attr_dev(input1, "min", "100");
     			attr_dev(input1, "max", "500");
     			attr_dev(input1, "placeholder", "Range: 100 - 500");
-    			add_location(input1, file, 64, 5, 1665);
+    			add_location(input1, file, 66, 5, 1720);
     			attr_dev(div1, "class", "form-group");
-    			add_location(div1, file, 62, 4, 1572);
+    			add_location(div1, file, 64, 4, 1627);
     			attr_dev(label2, "for", "select");
-    			add_location(label2, file, 68, 5, 1831);
+    			add_location(label2, file, 70, 5, 1886);
     			option0.__value = "gscale_70";
     			option0.value = option0.__value;
-    			add_location(option0, file, 70, 5, 1939);
+    			add_location(option0, file, 72, 5, 1994);
     			option1.__value = "gscale_10";
     			option1.value = option1.__value;
-    			add_location(option1, file, 71, 5, 1994);
+    			add_location(option1, file, 73, 5, 2049);
     			option2.__value = "gscale_block";
     			option2.value = option2.__value;
-    			add_location(option2, file, 72, 5, 2049);
+    			add_location(option2, file, 74, 5, 2104);
     			attr_dev(select, "id", "select");
     			attr_dev(select, "name", "select");
-    			if (/*chars*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[9].call(select));
-    			add_location(select, file, 69, 5, 1879);
+    			if (/*chars*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[10].call(select));
+    			add_location(select, file, 71, 5, 1934);
     			attr_dev(div2, "class", "form-group");
-    			add_location(div2, file, 67, 4, 1801);
-    			add_location(fieldset, file, 56, 4, 1371);
+    			add_location(div2, file, 69, 4, 1856);
+    			add_location(fieldset, file, 58, 4, 1426);
     			attr_dev(div3, "class", "column column-50 column-offset-25");
-    			add_location(div3, file, 54, 2, 1300);
+    			add_location(div3, file, 56, 2, 1355);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, div3, anchor);
@@ -582,9 +591,9 @@ var app = (function () {
     			if (remount) run_all(dispose);
 
     			dispose = [
-    				listen_dev(input0, "change", /*input0_change_handler*/ ctx[7]),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[8]),
-    				listen_dev(select, "change", /*select_change_handler*/ ctx[9])
+    				listen_dev(input0, "change", /*input0_change_handler*/ ctx[8]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[9]),
+    				listen_dev(select, "change", /*select_change_handler*/ ctx[10])
     			];
     		},
     		p: function update(ctx, dirty) {
@@ -619,14 +628,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(54:1) {#if !generated}",
+    		source: "(56:1) {#if !generated}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (80:4) {:else}
+    // (82:4) {:else}
     function create_else_block(ctx) {
     	let button;
 
@@ -636,7 +645,7 @@ var app = (function () {
     			button.textContent = "Generate";
     			attr_dev(button, "class", "btn btn-error btn-ghost");
     			button.disabled = true;
-    			add_location(button, file, 80, 5, 2293);
+    			add_location(button, file, 82, 5, 2348);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -651,14 +660,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(80:4) {:else}",
+    		source: "(82:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (77:4) {#if files!== undefined && width < 501 && width > 99 && chars!== ""}
+    // (79:4) {#if files!== undefined && width < 501 && width > 99 && chars!== ""}
     function create_if_block_1(ctx) {
     	let button;
     	let dispose;
@@ -668,12 +677,12 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Generate";
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file, 77, 5, 2201);
+    			add_location(button, file, 79, 5, 2256);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button, anchor);
     			if (remount) dispose();
-    			dispose = listen_dev(button, "click", /*sendForm*/ ctx[5], false, false, false);
+    			dispose = listen_dev(button, "click", /*sendForm*/ ctx[6], false, false, false);
     		},
     		p: noop,
     		d: function destroy(detaching) {
@@ -686,7 +695,7 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(77:4) {#if files!== undefined && width < 501 && width > 99 && chars!== \\\"\\\"}",
+    		source: "(79:4) {#if files!== undefined && width < 501 && width > 99 && chars!== \\\"\\\"}",
     		ctx
     	});
 
@@ -727,18 +736,18 @@ var app = (function () {
     			br = element("br");
     			attr_dev(a, "href", "/");
     			attr_dev(a, "class", "no-style");
-    			add_location(a, file, 38, 36, 920);
+    			add_location(a, file, 40, 36, 975);
     			attr_dev(div0, "class", "logo terminal-prompt");
-    			add_location(div0, file, 38, 2, 886);
+    			add_location(div0, file, 40, 2, 941);
     			attr_dev(div1, "class", "terminal-logo");
-    			add_location(div1, file, 36, 1, 841);
+    			add_location(div1, file, 38, 1, 896);
     			attr_dev(div2, "class", "terminal-nav");
-    			add_location(div2, file, 35, 0, 813);
+    			add_location(div2, file, 37, 0, 868);
     			attr_dev(div3, "class", "row");
-    			add_location(div3, file, 52, 1, 1262);
+    			add_location(div3, file, 54, 1, 1317);
     			attr_dev(div4, "class", "container");
-    			add_location(div4, file, 50, 0, 1235);
-    			add_location(br, file, 109, 0, 2849);
+    			add_location(div4, file, 52, 0, 1290);
+    			add_location(br, file, 111, 0, 2939);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -795,11 +804,13 @@ var app = (function () {
     	let files, width, chars;
     	let generated = false;
     	let art = "";
+    	let textSize = 15;
     	var clipboard = new ClipboardJS(".copy");
 
     	function sendForm() {
     		console.log(files[0], width, chars);
     		var formData = new FormData();
+    		$$invalidate(5, textSize = Math.floor(1500 / width));
     		formData.append("image", files[0]);
     		formData.append("width", width);
     		formData.append("charset", chars);
@@ -853,6 +864,7 @@ var app = (function () {
     		chars,
     		generated,
     		art,
+    		textSize,
     		clipboard,
     		sendForm
     	});
@@ -863,6 +875,7 @@ var app = (function () {
     		if ("chars" in $$props) $$invalidate(2, chars = $$props.chars);
     		if ("generated" in $$props) $$invalidate(3, generated = $$props.generated);
     		if ("art" in $$props) $$invalidate(4, art = $$props.art);
+    		if ("textSize" in $$props) $$invalidate(5, textSize = $$props.textSize);
     		if ("clipboard" in $$props) clipboard = $$props.clipboard;
     	};
 
@@ -876,6 +889,7 @@ var app = (function () {
     		chars,
     		generated,
     		art,
+    		textSize,
     		sendForm,
     		clipboard,
     		input0_change_handler,

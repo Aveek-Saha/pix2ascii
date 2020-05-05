@@ -2,12 +2,14 @@
 	let files, width, chars
 	let generated = false
 	let art = ""
+	let textSize = 15
 
 	var clipboard = new ClipboardJS('.copy');
 
 	function sendForm() {
 		console.log(files[0], width, chars);
 		var formData = new FormData();
+		textSize = Math.floor(1500/width)
 
 		formData.append("image", files[0]);
 		formData.append("width", width);
@@ -90,7 +92,7 @@
 			<form>
 				<fieldset>
 				<legend>ASCII Art</legend>
-				<div style="font-size:15px; font-family: monospace;" id="art">
+				<div style="font-size:{textSize}px; line-height: {textSize}px; font-family: monospace;" id="art">
 					{art}
 				</div>
 				</fieldset>
