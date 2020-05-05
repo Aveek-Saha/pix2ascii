@@ -1,6 +1,8 @@
 <script>
 	let files, width, chars
-	
+	let generated = false
+	let art = ""
+
 	function sendForm() {
 		console.log(files[0], width, chars);
 		var formData = new FormData();
@@ -16,7 +18,9 @@
 		if(request.readyState === XMLHttpRequest.DONE) {
 			var status = request.status;
 			if (status === 0 || (status >= 200 && status < 400)) {
-			console.log(request.responseText);
+			// console.log(request.responseText);
+			art = request.responseText
+			generated = true
 			} else {
 			console.log("Error");
 			
@@ -45,7 +49,8 @@
 <div class="container">
 	
 	<div class="row">
-		<div class="column column-40 column-offset-10">
+	{#if !generated}
+		<div class="column column-50 column-offset-25">
 			<!-- <form> -->
 				<fieldset>
 				<legend>Upload Image</legend>
@@ -78,16 +83,29 @@
 				</fieldset>
 			<!-- </form> -->
 		</div>
-		<div class="column column-40">
+		{:else}
+		<div class="column column-60 column-offset-20">
 			<form>
 				<fieldset>
 				<legend>ASCII Art</legend>
+				<div style="font-size:15px; font-family: monospace;">
+					{art}
+				</div>
 				</fieldset>
 			</form>
+			
+			<br>
 		</div>
+		<div class="column column-20">
+		<br>
+			<button class="btn btn-primary">
+				Copy to clipboard
+			</button>
+		</div>
+		{/if}
 	</div>
-
 </div>
+<br>
 
 
 <!-- <div class="row end-lg end-m end-s">

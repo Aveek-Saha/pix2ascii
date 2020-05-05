@@ -64,6 +64,9 @@ var app = (function () {
             input.value = value;
         }
     }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
     function select_option(select, value) {
         for (let i = 0; i < select.options.length; i += 1) {
             const option = select.options[i];
@@ -312,6 +315,13 @@ var app = (function () {
         else
             dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
     }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
+    }
     function validate_slots(name, slot, keys) {
         for (const slot_key of Object.keys(slot)) {
             if (!~keys.indexOf(slot_key)) {
@@ -341,7 +351,274 @@ var app = (function () {
     const { console: console_1 } = globals;
     const file = "src\\App.svelte";
 
-    // (73:4) {:else}
+    // (86:2) {:else}
+    function create_else_block_1(ctx) {
+    	let div1;
+    	let form;
+    	let fieldset;
+    	let legend;
+    	let t1;
+    	let div0;
+    	let t2;
+    	let t3;
+    	let br0;
+    	let t4;
+    	let div2;
+    	let br1;
+    	let t5;
+    	let button;
+
+    	const block = {
+    		c: function create() {
+    			div1 = element("div");
+    			form = element("form");
+    			fieldset = element("fieldset");
+    			legend = element("legend");
+    			legend.textContent = "ASCII Art";
+    			t1 = space();
+    			div0 = element("div");
+    			t2 = text(/*art*/ ctx[4]);
+    			t3 = space();
+    			br0 = element("br");
+    			t4 = space();
+    			div2 = element("div");
+    			br1 = element("br");
+    			t5 = space();
+    			button = element("button");
+    			button.textContent = "Copy to clipboard";
+    			add_location(legend, file, 89, 4, 2467);
+    			set_style(div0, "font-size", "15px");
+    			set_style(div0, "font-family", "monospace");
+    			add_location(div0, file, 90, 4, 2498);
+    			add_location(fieldset, file, 88, 4, 2452);
+    			add_location(form, file, 87, 3, 2441);
+    			add_location(br0, file, 96, 3, 2608);
+    			attr_dev(div1, "class", "column column-60 column-offset-20");
+    			add_location(div1, file, 86, 2, 2390);
+    			add_location(br1, file, 99, 2, 2657);
+    			attr_dev(button, "class", "btn btn-primary");
+    			add_location(button, file, 100, 3, 2665);
+    			attr_dev(div2, "class", "column column-20");
+    			add_location(div2, file, 98, 2, 2624);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div1, anchor);
+    			append_dev(div1, form);
+    			append_dev(form, fieldset);
+    			append_dev(fieldset, legend);
+    			append_dev(fieldset, t1);
+    			append_dev(fieldset, div0);
+    			append_dev(div0, t2);
+    			append_dev(div1, t3);
+    			append_dev(div1, br0);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, br1);
+    			append_dev(div2, t5);
+    			append_dev(div2, button);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*art*/ 16) set_data_dev(t2, /*art*/ ctx[4]);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div1);
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(div2);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1.name,
+    		type: "else",
+    		source: "(86:2) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (52:1) {#if !generated}
+    function create_if_block(ctx) {
+    	let div3;
+    	let fieldset;
+    	let legend;
+    	let t1;
+    	let div0;
+    	let label0;
+    	let t3;
+    	let input0;
+    	let t4;
+    	let div1;
+    	let label1;
+    	let t6;
+    	let input1;
+    	let t7;
+    	let div2;
+    	let label2;
+    	let t9;
+    	let select;
+    	let option0;
+    	let option1;
+    	let option2;
+    	let t13;
+    	let dispose;
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (/*files*/ ctx[0] !== undefined && /*width*/ ctx[1] < 501 && /*width*/ ctx[1] > 99 && /*chars*/ ctx[2] !== "") return create_if_block_1;
+    		return create_else_block;
+    	}
+
+    	let current_block_type = select_block_type_1(ctx);
+    	let if_block = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div3 = element("div");
+    			fieldset = element("fieldset");
+    			legend = element("legend");
+    			legend.textContent = "Upload Image";
+    			t1 = space();
+    			div0 = element("div");
+    			label0 = element("label");
+    			label0.textContent = "Pick an image:";
+    			t3 = space();
+    			input0 = element("input");
+    			t4 = space();
+    			div1 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Number of characters in a row:";
+    			t6 = space();
+    			input1 = element("input");
+    			t7 = space();
+    			div2 = element("div");
+    			label2 = element("label");
+    			label2.textContent = "Characterset:";
+    			t9 = space();
+    			select = element("select");
+    			option0 = element("option");
+    			option0.textContent = "Grayscale 70 ";
+    			option1 = element("option");
+    			option1.textContent = "Grayscale 10 ";
+    			option2 = element("option");
+    			option2.textContent = "Blocks";
+    			t13 = space();
+    			if_block.c();
+    			add_location(legend, file, 55, 4, 1342);
+    			attr_dev(label0, "for", "file");
+    			add_location(label0, file, 57, 5, 1406);
+    			attr_dev(input0, "id", "file");
+    			attr_dev(input0, "name", "file");
+    			attr_dev(input0, "type", "file");
+    			add_location(input0, file, 58, 5, 1452);
+    			attr_dev(div0, "class", "form-group");
+    			add_location(div0, file, 56, 4, 1376);
+    			attr_dev(label1, "for", "width");
+    			add_location(label1, file, 61, 5, 1558);
+    			attr_dev(input1, "id", "width");
+    			attr_dev(input1, "name", "width");
+    			attr_dev(input1, "type", "number");
+    			attr_dev(input1, "min", "100");
+    			attr_dev(input1, "max", "500");
+    			attr_dev(input1, "placeholder", "Range: 100 - 500");
+    			add_location(input1, file, 62, 5, 1621);
+    			attr_dev(div1, "class", "form-group");
+    			add_location(div1, file, 60, 4, 1528);
+    			attr_dev(label2, "for", "select");
+    			add_location(label2, file, 66, 5, 1787);
+    			option0.__value = "gscale_70";
+    			option0.value = option0.__value;
+    			add_location(option0, file, 68, 5, 1895);
+    			option1.__value = "gscale_10";
+    			option1.value = option1.__value;
+    			add_location(option1, file, 69, 5, 1950);
+    			option2.__value = "gscale_block";
+    			option2.value = option2.__value;
+    			add_location(option2, file, 70, 5, 2005);
+    			attr_dev(select, "id", "select");
+    			attr_dev(select, "name", "select");
+    			if (/*chars*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[8].call(select));
+    			add_location(select, file, 67, 5, 1835);
+    			attr_dev(div2, "class", "form-group");
+    			add_location(div2, file, 65, 4, 1757);
+    			add_location(fieldset, file, 54, 4, 1327);
+    			attr_dev(div3, "class", "column column-50 column-offset-25");
+    			add_location(div3, file, 52, 2, 1256);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, fieldset);
+    			append_dev(fieldset, legend);
+    			append_dev(fieldset, t1);
+    			append_dev(fieldset, div0);
+    			append_dev(div0, label0);
+    			append_dev(div0, t3);
+    			append_dev(div0, input0);
+    			append_dev(fieldset, t4);
+    			append_dev(fieldset, div1);
+    			append_dev(div1, label1);
+    			append_dev(div1, t6);
+    			append_dev(div1, input1);
+    			set_input_value(input1, /*width*/ ctx[1]);
+    			append_dev(fieldset, t7);
+    			append_dev(fieldset, div2);
+    			append_dev(div2, label2);
+    			append_dev(div2, t9);
+    			append_dev(div2, select);
+    			append_dev(select, option0);
+    			append_dev(select, option1);
+    			append_dev(select, option2);
+    			select_option(select, /*chars*/ ctx[2]);
+    			append_dev(fieldset, t13);
+    			if_block.m(fieldset, null);
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "change", /*input0_change_handler*/ ctx[6]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[7]),
+    				listen_dev(select, "change", /*select_change_handler*/ ctx[8])
+    			];
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*width*/ 2 && to_number(input1.value) !== /*width*/ ctx[1]) {
+    				set_input_value(input1, /*width*/ ctx[1]);
+    			}
+
+    			if (dirty & /*chars*/ 4) {
+    				select_option(select, /*chars*/ ctx[2]);
+    			}
+
+    			if (current_block_type === (current_block_type = select_block_type_1(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(fieldset, null);
+    				}
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div3);
+    			if_block.d();
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(52:1) {#if !generated}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (78:4) {:else}
     function create_else_block(ctx) {
     	let button;
 
@@ -351,7 +628,7 @@ var app = (function () {
     			button.textContent = "Generate";
     			attr_dev(button, "class", "btn btn-error btn-ghost");
     			button.disabled = true;
-    			add_location(button, file, 73, 5, 2142);
+    			add_location(button, file, 78, 5, 2249);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -366,15 +643,15 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(73:4) {:else}",
+    		source: "(78:4) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (70:4) {#if files!== undefined && width < 501 && width > 99 && chars!== ""}
-    function create_if_block(ctx) {
+    // (75:4) {#if files!== undefined && width < 501 && width > 99 && chars!== ""}
+    function create_if_block_1(ctx) {
     	let button;
     	let dispose;
 
@@ -383,12 +660,12 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "Generate";
     			attr_dev(button, "class", "btn btn-primary");
-    			add_location(button, file, 70, 5, 2050);
+    			add_location(button, file, 75, 5, 2157);
     		},
     		m: function mount(target, anchor, remount) {
     			insert_dev(target, button, anchor);
     			if (remount) dispose();
-    			dispose = listen_dev(button, "click", /*sendForm*/ ctx[3], false, false, false);
+    			dispose = listen_dev(button, "click", /*sendForm*/ ctx[5], false, false, false);
     		},
     		p: noop,
     		d: function destroy(detaching) {
@@ -399,9 +676,9 @@ var app = (function () {
 
     	dispatch_dev("SvelteRegisterBlock", {
     		block,
-    		id: create_if_block.name,
+    		id: create_if_block_1.name,
     		type: "if",
-    		source: "(70:4) {#if files!== undefined && width < 501 && width > 99 && chars!== \\\"\\\"}",
+    		source: "(75:4) {#if files!== undefined && width < 501 && width > 99 && chars!== \\\"\\\"}",
     		ctx
     	});
 
@@ -414,40 +691,14 @@ var app = (function () {
     	let div0;
     	let a;
     	let t1;
-    	let div9;
-    	let div8;
-    	let div6;
-    	let fieldset0;
-    	let legend0;
-    	let t3;
-    	let div3;
-    	let label0;
-    	let t5;
-    	let input0;
-    	let t6;
     	let div4;
-    	let label1;
-    	let t8;
-    	let input1;
-    	let t9;
-    	let div5;
-    	let label2;
-    	let t11;
-    	let select;
-    	let option0;
-    	let option1;
-    	let option2;
-    	let t15;
-    	let t16;
-    	let div7;
-    	let form;
-    	let fieldset1;
-    	let legend1;
-    	let dispose;
+    	let div3;
+    	let t2;
+    	let br;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*files*/ ctx[0] !== undefined && /*width*/ ctx[1] < 501 && /*width*/ ctx[1] > 99 && /*chars*/ ctx[2] !== "") return create_if_block;
-    		return create_else_block;
+    		if (!/*generated*/ ctx[3]) return create_if_block;
+    		return create_else_block_1;
     	}
 
     	let current_block_type = select_block_type(ctx);
@@ -461,161 +712,42 @@ var app = (function () {
     			a = element("a");
     			a.textContent = "Pix 2 Ascii";
     			t1 = space();
-    			div9 = element("div");
-    			div8 = element("div");
-    			div6 = element("div");
-    			fieldset0 = element("fieldset");
-    			legend0 = element("legend");
-    			legend0.textContent = "Upload Image";
-    			t3 = space();
-    			div3 = element("div");
-    			label0 = element("label");
-    			label0.textContent = "Pick an image:";
-    			t5 = space();
-    			input0 = element("input");
-    			t6 = space();
     			div4 = element("div");
-    			label1 = element("label");
-    			label1.textContent = "Number of characters in a row:";
-    			t8 = space();
-    			input1 = element("input");
-    			t9 = space();
-    			div5 = element("div");
-    			label2 = element("label");
-    			label2.textContent = "Characterset:";
-    			t11 = space();
-    			select = element("select");
-    			option0 = element("option");
-    			option0.textContent = "Grayscale 70 ";
-    			option1 = element("option");
-    			option1.textContent = "Grayscale 10 ";
-    			option2 = element("option");
-    			option2.textContent = "Blocks";
-    			t15 = space();
+    			div3 = element("div");
     			if_block.c();
-    			t16 = space();
-    			div7 = element("div");
-    			form = element("form");
-    			fieldset1 = element("fieldset");
-    			legend1 = element("legend");
-    			legend1.textContent = "ASCII Art";
+    			t2 = space();
+    			br = element("br");
     			attr_dev(a, "href", "/");
     			attr_dev(a, "class", "no-style");
-    			add_location(a, file, 32, 36, 787);
+    			add_location(a, file, 36, 36, 876);
     			attr_dev(div0, "class", "logo terminal-prompt");
-    			add_location(div0, file, 32, 2, 753);
+    			add_location(div0, file, 36, 2, 842);
     			attr_dev(div1, "class", "terminal-logo");
-    			add_location(div1, file, 30, 1, 708);
+    			add_location(div1, file, 34, 1, 797);
     			attr_dev(div2, "class", "terminal-nav");
-    			add_location(div2, file, 29, 0, 680);
-    			add_location(legend0, file, 50, 4, 1235);
-    			attr_dev(label0, "for", "file");
-    			add_location(label0, file, 52, 5, 1299);
-    			attr_dev(input0, "id", "file");
-    			attr_dev(input0, "name", "file");
-    			attr_dev(input0, "type", "file");
-    			add_location(input0, file, 53, 5, 1345);
-    			attr_dev(div3, "class", "form-group");
-    			add_location(div3, file, 51, 4, 1269);
-    			attr_dev(label1, "for", "width");
-    			add_location(label1, file, 56, 5, 1451);
-    			attr_dev(input1, "id", "width");
-    			attr_dev(input1, "name", "width");
-    			attr_dev(input1, "type", "number");
-    			attr_dev(input1, "min", "100");
-    			attr_dev(input1, "max", "500");
-    			attr_dev(input1, "placeholder", "Range: 100 - 500");
-    			add_location(input1, file, 57, 5, 1514);
-    			attr_dev(div4, "class", "form-group");
-    			add_location(div4, file, 55, 4, 1421);
-    			attr_dev(label2, "for", "select");
-    			add_location(label2, file, 61, 5, 1680);
-    			option0.__value = "gscale_70";
-    			option0.value = option0.__value;
-    			add_location(option0, file, 63, 5, 1788);
-    			option1.__value = "gscale_10";
-    			option1.value = option1.__value;
-    			add_location(option1, file, 64, 5, 1843);
-    			option2.__value = "gscale_block";
-    			option2.value = option2.__value;
-    			add_location(option2, file, 65, 5, 1898);
-    			attr_dev(select, "id", "select");
-    			attr_dev(select, "name", "select");
-    			if (/*chars*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[6].call(select));
-    			add_location(select, file, 62, 5, 1728);
-    			attr_dev(div5, "class", "form-group");
-    			add_location(div5, file, 60, 4, 1650);
-    			add_location(fieldset0, file, 49, 4, 1220);
-    			attr_dev(div6, "class", "column column-40 column-offset-10");
-    			add_location(div6, file, 47, 2, 1149);
-    			add_location(legend1, file, 83, 4, 2333);
-    			add_location(fieldset1, file, 82, 4, 2318);
-    			add_location(form, file, 81, 3, 2307);
-    			attr_dev(div7, "class", "column column-40");
-    			add_location(div7, file, 80, 2, 2273);
-    			attr_dev(div8, "class", "row");
-    			add_location(div8, file, 46, 1, 1129);
-    			attr_dev(div9, "class", "container");
-    			add_location(div9, file, 44, 0, 1102);
+    			add_location(div2, file, 33, 0, 769);
+    			attr_dev(div3, "class", "row");
+    			add_location(div3, file, 50, 1, 1218);
+    			attr_dev(div4, "class", "container");
+    			add_location(div4, file, 48, 0, 1191);
+    			add_location(br, file, 107, 0, 2765);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
-    		m: function mount(target, anchor, remount) {
+    		m: function mount(target, anchor) {
     			insert_dev(target, div2, anchor);
     			append_dev(div2, div1);
     			append_dev(div1, div0);
     			append_dev(div0, a);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, div9, anchor);
-    			append_dev(div9, div8);
-    			append_dev(div8, div6);
-    			append_dev(div6, fieldset0);
-    			append_dev(fieldset0, legend0);
-    			append_dev(fieldset0, t3);
-    			append_dev(fieldset0, div3);
-    			append_dev(div3, label0);
-    			append_dev(div3, t5);
-    			append_dev(div3, input0);
-    			append_dev(fieldset0, t6);
-    			append_dev(fieldset0, div4);
-    			append_dev(div4, label1);
-    			append_dev(div4, t8);
-    			append_dev(div4, input1);
-    			set_input_value(input1, /*width*/ ctx[1]);
-    			append_dev(fieldset0, t9);
-    			append_dev(fieldset0, div5);
-    			append_dev(div5, label2);
-    			append_dev(div5, t11);
-    			append_dev(div5, select);
-    			append_dev(select, option0);
-    			append_dev(select, option1);
-    			append_dev(select, option2);
-    			select_option(select, /*chars*/ ctx[2]);
-    			append_dev(fieldset0, t15);
-    			if_block.m(fieldset0, null);
-    			append_dev(div8, t16);
-    			append_dev(div8, div7);
-    			append_dev(div7, form);
-    			append_dev(form, fieldset1);
-    			append_dev(fieldset1, legend1);
-    			if (remount) run_all(dispose);
-
-    			dispose = [
-    				listen_dev(input0, "change", /*input0_change_handler*/ ctx[4]),
-    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[5]),
-    				listen_dev(select, "change", /*select_change_handler*/ ctx[6])
-    			];
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div3);
+    			if_block.m(div3, null);
+    			insert_dev(target, t2, anchor);
+    			insert_dev(target, br, anchor);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*width*/ 2 && to_number(input1.value) !== /*width*/ ctx[1]) {
-    				set_input_value(input1, /*width*/ ctx[1]);
-    			}
-
-    			if (dirty & /*chars*/ 4) {
-    				select_option(select, /*chars*/ ctx[2]);
-    			}
-
     			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
     				if_block.p(ctx, dirty);
     			} else {
@@ -624,7 +756,7 @@ var app = (function () {
 
     				if (if_block) {
     					if_block.c();
-    					if_block.m(fieldset0, null);
+    					if_block.m(div3, null);
     				}
     			}
     		},
@@ -633,9 +765,10 @@ var app = (function () {
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div2);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(div9);
+    			if (detaching) detach_dev(div4);
     			if_block.d();
-    			run_all(dispose);
+    			if (detaching) detach_dev(t2);
+    			if (detaching) detach_dev(br);
     		}
     	};
 
@@ -652,6 +785,8 @@ var app = (function () {
 
     function instance($$self, $$props, $$invalidate) {
     	let files, width, chars;
+    	let generated = false;
+    	let art = "";
 
     	function sendForm() {
     		console.log(files[0], width, chars);
@@ -668,7 +803,10 @@ var app = (function () {
     				var status = request.status;
 
     				if (status === 0 || status >= 200 && status < 400) {
-    					console.log(request.responseText);
+    					// console.log(request.responseText);
+    					$$invalidate(4, art = request.responseText);
+
+    					$$invalidate(3, generated = true);
     				} else {
     					console.log("Error");
     				}
@@ -700,12 +838,21 @@ var app = (function () {
     		$$invalidate(2, chars);
     	}
 
-    	$$self.$capture_state = () => ({ files, width, chars, sendForm });
+    	$$self.$capture_state = () => ({
+    		files,
+    		width,
+    		chars,
+    		generated,
+    		art,
+    		sendForm
+    	});
 
     	$$self.$inject_state = $$props => {
     		if ("files" in $$props) $$invalidate(0, files = $$props.files);
     		if ("width" in $$props) $$invalidate(1, width = $$props.width);
     		if ("chars" in $$props) $$invalidate(2, chars = $$props.chars);
+    		if ("generated" in $$props) $$invalidate(3, generated = $$props.generated);
+    		if ("art" in $$props) $$invalidate(4, art = $$props.art);
     	};
 
     	if ($$props && "$$inject" in $$props) {
@@ -716,6 +863,8 @@ var app = (function () {
     		files,
     		width,
     		chars,
+    		generated,
+    		art,
     		sendForm,
     		input0_change_handler,
     		input1_input_handler,
