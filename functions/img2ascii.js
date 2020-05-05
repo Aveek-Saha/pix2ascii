@@ -5,7 +5,7 @@ exports.convert = function (file, width, options) {
     var greyscale = {
         gscale_70: "@$B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\" ^`'.".split("").reverse().join(""),
         gscale_10: "@%#*+=-:. ".split("").reverse().join(""),
-        gscale_block: "  ░▒▓█"
+        gscale_block: "░▒▓█"
     }
 
     var gscale = greyscale[options]
