@@ -19,6 +19,9 @@ jobs:
         cd client
         npm i
         npm run build
+        cd ..
+        cd functions
+        npm i
         
     - name: Firebase Deploy
       run: |
