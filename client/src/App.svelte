@@ -16,7 +16,7 @@
 		formData.append("charset", chars);
 
 		var request = new XMLHttpRequest();
-		request.open("POST", "http://localhost:5001/pix2ascii/us-central1/ascii");
+		request.open("POST", "https://us-central1-pix2ascii.cloudfunctions.net/ascii");
 		request.send(formData);
 		request.onreadystatechange = function () {
 		if(request.readyState === XMLHttpRequest.DONE) {
