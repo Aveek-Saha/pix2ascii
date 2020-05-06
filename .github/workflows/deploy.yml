@@ -16,14 +16,11 @@ jobs:
     
     - name: Build
       run: |
-        ls
         cd client
         npm i
         npm run build
         
     - name: Firebase Deploy
       run: |
-        cd ..
-        ls
         sudo npm install -g firebase-tools
         firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
