@@ -1,2 +1,1073 @@
-var app=function(){"use strict";function t(){}function e(t){return t()}function n(){return Object.create(null)}function o(t){t.forEach(e)}function r(t){return"function"==typeof t}function c(t,e){return t!=t?e==e:t!==e||t&&"object"==typeof t||"function"==typeof t}function a(t,e){t.appendChild(e)}function l(t,e,n){t.insertBefore(e,n||null)}function i(t){t.parentNode.removeChild(t)}function u(t){return document.createElement(t)}function s(t){return document.createTextNode(t)}function f(){return s(" ")}function d(t,e,n,o){return t.addEventListener(e,n,o),()=>t.removeEventListener(e,n,o)}function p(t,e,n){null==n?t.removeAttribute(e):t.getAttribute(e)!==n&&t.setAttribute(e,n)}function m(t){return""===t?void 0:+t}function h(t,e){(null!=e||t.value)&&(t.value=e)}function g(t,e,n,o){t.style.setProperty(e,n,o?"important":"")}function v(t,e){for(let n=0;n<t.options.length;n+=1){const o=t.options[n];if(o.__value===e)return void(o.selected=!0)}}let b;function x(t){b=t}const y=[],_=[],$=[],C=[],w=Promise.resolve();let k=!1;function E(t){$.push(t)}let A=!1;const S=new Set;function G(){if(!A){A=!0;do{for(let t=0;t<y.length;t+=1){const e=y[t];x(e),L(e.$$)}for(y.length=0;_.length;)_.pop()();for(let t=0;t<$.length;t+=1){const e=$[t];S.has(e)||(S.add(e),e())}$.length=0}while(y.length);for(;C.length;)C.pop()();k=!1,A=!1,S.clear()}}function L(t){if(null!==t.fragment){t.update(),o(t.before_update);const e=t.dirty;t.dirty=[-1],t.fragment&&t.fragment.p(t.ctx,e),t.after_update.forEach(E)}}const M=new Set;function N(t,e){-1===t.$$.dirty[0]&&(y.push(t),k||(k=!0,w.then(G)),t.$$.dirty.fill(0)),t.$$.dirty[e/31|0]|=1<<e%31}function P(c,a,l,u,s,f,d=[-1]){const p=b;x(c);const m=a.props||{},h=c.$$={fragment:null,ctx:null,props:f,update:t,not_equal:s,bound:n(),on_mount:[],on_destroy:[],before_update:[],after_update:[],context:new Map(p?p.$$.context:[]),callbacks:n(),dirty:d};let g=!1;if(h.ctx=l?l(c,m,(t,e,...n)=>{const o=n.length?n[0]:e;return h.ctx&&s(h.ctx[t],h.ctx[t]=o)&&(h.bound[t]&&h.bound[t](o),g&&N(c,t)),e}):[],h.update(),g=!0,o(h.before_update),h.fragment=!!u&&u(h.ctx),a.target){if(a.hydrate){const t=function(t){return Array.from(t.childNodes)}(a.target);h.fragment&&h.fragment.l(t),t.forEach(i)}else h.fragment&&h.fragment.c();a.intro&&((v=c.$$.fragment)&&v.i&&(M.delete(v),v.i(y))),function(t,n,c){const{fragment:a,on_mount:l,on_destroy:i,after_update:u}=t.$$;a&&a.m(n,c),E(()=>{const n=l.map(e).filter(r);i?i.push(...n):o(n),t.$$.on_mount=[]}),u.forEach(E)}(c,a.target,a.anchor),G()}var v,y;x(p)}function q(t){let e,n,o,r,c,d,m,h,v,b,x,y,_,$,C,w,k,E,A,S,G,L,M;return{c(){e=u("div"),n=f(),o=u("div"),r=u("form"),c=u("fieldset"),d=u("legend"),d.textContent="ASCII Art",m=f(),h=u("div"),v=s(t[4]),b=f(),x=u("br"),y=f(),_=u("div"),$=u("br"),C=f(),w=u("button"),k=s("Copy"),E=f(),A=u("br"),S=f(),G=u("br"),L=f(),M=u("a"),M.textContent="Go back",p(e,"class","column column-20"),g(h,"font-size",t[5]+"px"),g(h,"line-height",t[5]+"px"),g(h,"font-family","monospace"),g(h,"white-space","pre-line"),p(o,"class","column column-60"),p(w,"class","btn btn-default copy"),p(w,"data-clipboard-text",t[4]),p(M,"class","btn btn-default"),p(M,"href","/"),p(_,"class","column column-20")},m(t,i){l(t,e,i),l(t,n,i),l(t,o,i),a(o,r),a(r,c),a(c,d),a(c,m),a(c,h),a(h,v),a(o,b),a(o,x),l(t,y,i),l(t,_,i),a(_,$),a(_,C),a(_,w),a(w,k),a(_,E),a(_,A),a(_,S),a(_,G),a(_,L),a(_,M)},p(t,e){16&e&&function(t,e){e=""+e,t.data!==e&&(t.data=e)}(v,t[4]),32&e&&g(h,"font-size",t[5]+"px"),32&e&&g(h,"line-height",t[5]+"px"),16&e&&p(w,"data-clipboard-text",t[4])},d(t){t&&i(e),t&&i(n),t&&i(o),t&&i(y),t&&i(_)}}}function H(t){let e,n,r,c,s,g,b,x,y,_,$,C,w,k,A,S,G,L,M,N,P,q,H,I,R;function j(t,e){return void 0!==t[0]&&t[1]<501&&t[1]>99&&""!==t[2]?T:O}let z=j(t),B=z(t);return{c(){e=u("div"),n=f(),r=u("div"),c=u("fieldset"),s=u("legend"),s.textContent="Upload Image",g=f(),b=u("div"),x=u("label"),x.textContent="Pick an image:",y=f(),_=u("input"),$=f(),C=u("div"),w=u("label"),w.textContent="Number of characters in a row:",k=f(),A=u("input"),S=f(),G=u("div"),L=u("label"),L.textContent="Characterset:",M=f(),N=u("select"),P=u("option"),P.textContent="Grayscale 70 ",q=u("option"),q.textContent="Grayscale 10 ",H=u("option"),H.textContent="Blocks",I=f(),B.c(),p(e,"class","column column-25"),p(x,"for","file"),p(_,"id","file"),p(_,"name","file"),p(_,"type","file"),p(b,"class","form-group"),p(w,"for","width"),p(A,"id","width"),p(A,"name","width"),p(A,"type","number"),p(A,"min","100"),p(A,"max","500"),p(A,"placeholder","Range: 100 - 500"),p(C,"class","form-group"),p(L,"for","select"),P.__value="gscale_70",P.value=P.__value,q.__value="gscale_10",q.value=q.__value,H.__value="gscale_block",H.value=H.__value,p(N,"id","select"),p(N,"name","select"),void 0===t[2]&&E(()=>t[10].call(N)),p(G,"class","form-group"),p(r,"class","column column-50")},m(i,u,f){l(i,e,u),l(i,n,u),l(i,r,u),a(r,c),a(c,s),a(c,g),a(c,b),a(b,x),a(b,y),a(b,_),a(c,$),a(c,C),a(C,w),a(C,k),a(C,A),h(A,t[1]),a(c,S),a(c,G),a(G,L),a(G,M),a(G,N),a(N,P),a(N,q),a(N,H),v(N,t[2]),a(c,I),B.m(c,null),f&&o(R),R=[d(_,"change",t[8]),d(A,"input",t[9]),d(N,"change",t[10])]},p(t,e){2&e&&m(A.value)!==t[1]&&h(A,t[1]),4&e&&v(N,t[2]),z===(z=j(t))&&B?B.p(t,e):(B.d(1),B=z(t),B&&(B.c(),B.m(c,null)))},d(t){t&&i(e),t&&i(n),t&&i(r),B.d(),o(R)}}}function O(e){let n;return{c(){n=u("button"),n.textContent="Generate",p(n,"class","btn btn-error btn-ghost"),n.disabled=!0},m(t,e){l(t,n,e)},p:t,d(t){t&&i(n)}}}function T(e){let n,o;return{c(){n=u("button"),n.textContent="Generate",p(n,"class","btn btn-primary")},m(t,r,c){l(t,n,r),c&&o(),o=d(n,"click",e[6])},p:t,d(t){t&&i(n),o()}}}function I(e){let n,o,r,c,s,d;function m(t,e){return t[3]?q:H}let h=m(e),g=h(e);return{c(){n=u("div"),n.innerHTML='<div class="terminal-logo"><h3><div class="logo terminal-prompt"><a href="/" class="no-style">Pix 2 Ascii</a></div></h3></div> \n\t<nav class="terminal-menu"><ul><li><a class="menu-item" href="https://github.com/Aveek-Saha/pix2ascii"><h3>#GitHub</h3></a></li></ul></nav>',o=f(),r=u("div"),c=u("div"),g.c(),s=f(),d=u("br"),p(n,"class","terminal-nav"),p(c,"class","row"),p(r,"class","container")},m(t,e){l(t,n,e),l(t,o,e),l(t,r,e),a(r,c),g.m(c,null),l(t,s,e),l(t,d,e)},p(t,[e]){h===(h=m(t))&&g?g.p(t,e):(g.d(1),g=h(t),g&&(g.c(),g.m(c,null)))},i:t,o:t,d(t){t&&i(n),t&&i(o),t&&i(r),g.d(),t&&i(s),t&&i(d)}}}function R(t,e,n){let o,r,c,a=!1,l="",i=15;var u=new ClipboardJS(".copy");return[o,r,c,a,l,i,function(){console.log(o[0],r,c);var t=new FormData;n(5,i=Math.floor(1500/r)),t.append("image",o[0]),t.append("width",r),t.append("charset",c);var e=new XMLHttpRequest;e.open("POST","https://us-central1-pix2ascii.cloudfunctions.net/ascii"),e.send(t),e.onreadystatechange=function(){if(e.readyState===XMLHttpRequest.DONE){var t=e.status;0===t||t>=200&&t<400?(n(4,l=e.responseText),n(3,a=!0)):console.log("Error")}}},u,function(){o=this.files,n(0,o)},function(){r=m(this.value),n(1,r)},function(){c=function(t){const e=t.querySelector(":checked")||t.options[0];return e&&e.__value}(this),n(2,c)}]}return new class extends class{$destroy(){!function(t,e){const n=t.$$;null!==n.fragment&&(o(n.on_destroy),n.fragment&&n.fragment.d(e),n.on_destroy=n.fragment=null,n.ctx=[])}(this,1),this.$destroy=t}$on(t,e){const n=this.$$.callbacks[t]||(this.$$.callbacks[t]=[]);return n.push(e),()=>{const t=n.indexOf(e);-1!==t&&n.splice(t,1)}}$set(){}}{constructor(t){super(),P(this,t,R,I,c,{})}}({target:document.body,props:{}})}();
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
+var app = (function () {
+    'use strict';
+
+    function noop() { }
+    function add_location(element, file, line, column, char) {
+        element.__svelte_meta = {
+            loc: { file, line, column, char }
+        };
+    }
+    function run(fn) {
+        return fn();
+    }
+    function blank_object() {
+        return Object.create(null);
+    }
+    function run_all(fns) {
+        fns.forEach(run);
+    }
+    function is_function(thing) {
+        return typeof thing === 'function';
+    }
+    function safe_not_equal(a, b) {
+        return a != a ? b == b : a !== b || ((a && typeof a === 'object') || typeof a === 'function');
+    }
+
+    function append(target, node) {
+        target.appendChild(node);
+    }
+    function insert(target, node, anchor) {
+        target.insertBefore(node, anchor || null);
+    }
+    function detach(node) {
+        node.parentNode.removeChild(node);
+    }
+    function element(name) {
+        return document.createElement(name);
+    }
+    function text(data) {
+        return document.createTextNode(data);
+    }
+    function space() {
+        return text(' ');
+    }
+    function listen(node, event, handler, options) {
+        node.addEventListener(event, handler, options);
+        return () => node.removeEventListener(event, handler, options);
+    }
+    function attr(node, attribute, value) {
+        if (value == null)
+            node.removeAttribute(attribute);
+        else if (node.getAttribute(attribute) !== value)
+            node.setAttribute(attribute, value);
+    }
+    function to_number(value) {
+        return value === '' ? undefined : +value;
+    }
+    function children(element) {
+        return Array.from(element.childNodes);
+    }
+    function set_input_value(input, value) {
+        if (value != null || input.value) {
+            input.value = value;
+        }
+    }
+    function set_style(node, key, value, important) {
+        node.style.setProperty(key, value, important ? 'important' : '');
+    }
+    function select_option(select, value) {
+        for (let i = 0; i < select.options.length; i += 1) {
+            const option = select.options[i];
+            if (option.__value === value) {
+                option.selected = true;
+                return;
+            }
+        }
+    }
+    function select_value(select) {
+        const selected_option = select.querySelector(':checked') || select.options[0];
+        return selected_option && selected_option.__value;
+    }
+    function custom_event(type, detail) {
+        const e = document.createEvent('CustomEvent');
+        e.initCustomEvent(type, false, false, detail);
+        return e;
+    }
+
+    let current_component;
+    function set_current_component(component) {
+        current_component = component;
+    }
+
+    const dirty_components = [];
+    const binding_callbacks = [];
+    const render_callbacks = [];
+    const flush_callbacks = [];
+    const resolved_promise = Promise.resolve();
+    let update_scheduled = false;
+    function schedule_update() {
+        if (!update_scheduled) {
+            update_scheduled = true;
+            resolved_promise.then(flush);
+        }
+    }
+    function add_render_callback(fn) {
+        render_callbacks.push(fn);
+    }
+    let flushing = false;
+    const seen_callbacks = new Set();
+    function flush() {
+        if (flushing)
+            return;
+        flushing = true;
+        do {
+            // first, call beforeUpdate functions
+            // and update components
+            for (let i = 0; i < dirty_components.length; i += 1) {
+                const component = dirty_components[i];
+                set_current_component(component);
+                update(component.$$);
+            }
+            dirty_components.length = 0;
+            while (binding_callbacks.length)
+                binding_callbacks.pop()();
+            // then, once components are updated, call
+            // afterUpdate functions. This may cause
+            // subsequent updates...
+            for (let i = 0; i < render_callbacks.length; i += 1) {
+                const callback = render_callbacks[i];
+                if (!seen_callbacks.has(callback)) {
+                    // ...so guard against infinite loops
+                    seen_callbacks.add(callback);
+                    callback();
+                }
+            }
+            render_callbacks.length = 0;
+        } while (dirty_components.length);
+        while (flush_callbacks.length) {
+            flush_callbacks.pop()();
+        }
+        update_scheduled = false;
+        flushing = false;
+        seen_callbacks.clear();
+    }
+    function update($$) {
+        if ($$.fragment !== null) {
+            $$.update();
+            run_all($$.before_update);
+            const dirty = $$.dirty;
+            $$.dirty = [-1];
+            $$.fragment && $$.fragment.p($$.ctx, dirty);
+            $$.after_update.forEach(add_render_callback);
+        }
+    }
+    const outroing = new Set();
+    function transition_in(block, local) {
+        if (block && block.i) {
+            outroing.delete(block);
+            block.i(local);
+        }
+    }
+
+    const globals = (typeof window !== 'undefined'
+        ? window
+        : typeof globalThis !== 'undefined'
+            ? globalThis
+            : global);
+    function mount_component(component, target, anchor) {
+        const { fragment, on_mount, on_destroy, after_update } = component.$$;
+        fragment && fragment.m(target, anchor);
+        // onMount happens before the initial afterUpdate
+        add_render_callback(() => {
+            const new_on_destroy = on_mount.map(run).filter(is_function);
+            if (on_destroy) {
+                on_destroy.push(...new_on_destroy);
+            }
+            else {
+                // Edge case - component was destroyed immediately,
+                // most likely as a result of a binding initialising
+                run_all(new_on_destroy);
+            }
+            component.$$.on_mount = [];
+        });
+        after_update.forEach(add_render_callback);
+    }
+    function destroy_component(component, detaching) {
+        const $$ = component.$$;
+        if ($$.fragment !== null) {
+            run_all($$.on_destroy);
+            $$.fragment && $$.fragment.d(detaching);
+            // TODO null out other refs, including component.$$ (but need to
+            // preserve final state?)
+            $$.on_destroy = $$.fragment = null;
+            $$.ctx = [];
+        }
+    }
+    function make_dirty(component, i) {
+        if (component.$$.dirty[0] === -1) {
+            dirty_components.push(component);
+            schedule_update();
+            component.$$.dirty.fill(0);
+        }
+        component.$$.dirty[(i / 31) | 0] |= (1 << (i % 31));
+    }
+    function init(component, options, instance, create_fragment, not_equal, props, dirty = [-1]) {
+        const parent_component = current_component;
+        set_current_component(component);
+        const prop_values = options.props || {};
+        const $$ = component.$$ = {
+            fragment: null,
+            ctx: null,
+            // state
+            props,
+            update: noop,
+            not_equal,
+            bound: blank_object(),
+            // lifecycle
+            on_mount: [],
+            on_destroy: [],
+            before_update: [],
+            after_update: [],
+            context: new Map(parent_component ? parent_component.$$.context : []),
+            // everything else
+            callbacks: blank_object(),
+            dirty
+        };
+        let ready = false;
+        $$.ctx = instance
+            ? instance(component, prop_values, (i, ret, ...rest) => {
+                const value = rest.length ? rest[0] : ret;
+                if ($$.ctx && not_equal($$.ctx[i], $$.ctx[i] = value)) {
+                    if ($$.bound[i])
+                        $$.bound[i](value);
+                    if (ready)
+                        make_dirty(component, i);
+                }
+                return ret;
+            })
+            : [];
+        $$.update();
+        ready = true;
+        run_all($$.before_update);
+        // `false` as a special case of no DOM component
+        $$.fragment = create_fragment ? create_fragment($$.ctx) : false;
+        if (options.target) {
+            if (options.hydrate) {
+                const nodes = children(options.target);
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.l(nodes);
+                nodes.forEach(detach);
+            }
+            else {
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                $$.fragment && $$.fragment.c();
+            }
+            if (options.intro)
+                transition_in(component.$$.fragment);
+            mount_component(component, options.target, options.anchor);
+            flush();
+        }
+        set_current_component(parent_component);
+    }
+    class SvelteComponent {
+        $destroy() {
+            destroy_component(this, 1);
+            this.$destroy = noop;
+        }
+        $on(type, callback) {
+            const callbacks = (this.$$.callbacks[type] || (this.$$.callbacks[type] = []));
+            callbacks.push(callback);
+            return () => {
+                const index = callbacks.indexOf(callback);
+                if (index !== -1)
+                    callbacks.splice(index, 1);
+            };
+        }
+        $set() {
+            // overridden by instance, if it has props
+        }
+    }
+
+    function dispatch_dev(type, detail) {
+        document.dispatchEvent(custom_event(type, Object.assign({ version: '3.22.2' }, detail)));
+    }
+    function append_dev(target, node) {
+        dispatch_dev("SvelteDOMInsert", { target, node });
+        append(target, node);
+    }
+    function insert_dev(target, node, anchor) {
+        dispatch_dev("SvelteDOMInsert", { target, node, anchor });
+        insert(target, node, anchor);
+    }
+    function detach_dev(node) {
+        dispatch_dev("SvelteDOMRemove", { node });
+        detach(node);
+    }
+    function listen_dev(node, event, handler, options, has_prevent_default, has_stop_propagation) {
+        const modifiers = options === true ? ["capture"] : options ? Array.from(Object.keys(options)) : [];
+        if (has_prevent_default)
+            modifiers.push('preventDefault');
+        if (has_stop_propagation)
+            modifiers.push('stopPropagation');
+        dispatch_dev("SvelteDOMAddEventListener", { node, event, handler, modifiers });
+        const dispose = listen(node, event, handler, options);
+        return () => {
+            dispatch_dev("SvelteDOMRemoveEventListener", { node, event, handler, modifiers });
+            dispose();
+        };
+    }
+    function attr_dev(node, attribute, value) {
+        attr(node, attribute, value);
+        if (value == null)
+            dispatch_dev("SvelteDOMRemoveAttribute", { node, attribute });
+        else
+            dispatch_dev("SvelteDOMSetAttribute", { node, attribute, value });
+    }
+    function set_data_dev(text, data) {
+        data = '' + data;
+        if (text.data === data)
+            return;
+        dispatch_dev("SvelteDOMSetData", { node: text, data });
+        text.data = data;
+    }
+    function validate_slots(name, slot, keys) {
+        for (const slot_key of Object.keys(slot)) {
+            if (!~keys.indexOf(slot_key)) {
+                console.warn(`<${name}> received an unexpected slot "${slot_key}".`);
+            }
+        }
+    }
+    class SvelteComponentDev extends SvelteComponent {
+        constructor(options) {
+            if (!options || (!options.target && !options.$$inline)) {
+                throw new Error(`'target' is a required option`);
+            }
+            super();
+        }
+        $destroy() {
+            super.$destroy();
+            this.$destroy = () => {
+                console.warn(`Component was already destroyed`); // eslint-disable-line no-console
+            };
+        }
+        $capture_state() { }
+        $inject_state() { }
+    }
+
+    /* src\App.svelte generated by Svelte v3.22.2 */
+
+    const { console: console_1 } = globals;
+    const file = "src\\App.svelte";
+
+    // (97:2) {:else}
+    function create_else_block_1(ctx) {
+    	let div0;
+    	let t0;
+    	let div2;
+    	let form;
+    	let fieldset;
+    	let legend;
+    	let t2;
+    	let div1;
+    	let t3;
+    	let t4;
+    	let br0;
+    	let t5;
+    	let div3;
+    	let br1;
+    	let t6;
+    	let button;
+    	let t7;
+    	let t8;
+    	let br2;
+    	let t9;
+    	let br3;
+    	let t10;
+    	let a;
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			t0 = space();
+    			div2 = element("div");
+    			form = element("form");
+    			fieldset = element("fieldset");
+    			legend = element("legend");
+    			legend.textContent = "ASCII Art";
+    			t2 = space();
+    			div1 = element("div");
+    			t3 = text(/*art*/ ctx[5]);
+    			t4 = space();
+    			br0 = element("br");
+    			t5 = space();
+    			div3 = element("div");
+    			br1 = element("br");
+    			t6 = space();
+    			button = element("button");
+    			t7 = text("Copy");
+    			t8 = space();
+    			br2 = element("br");
+    			t9 = space();
+    			br3 = element("br");
+    			t10 = space();
+    			a = element("a");
+    			a.textContent = "Go back";
+    			attr_dev(div0, "class", "column column-20");
+    			add_location(div0, file, 98, 2, 2714);
+    			add_location(legend, file, 102, 4, 2813);
+    			set_style(div1, "font-size", /*textSize*/ ctx[6] + "px");
+    			set_style(div1, "line-height", /*textSize*/ ctx[6] + "px");
+    			set_style(div1, "font-family", "monospace");
+    			set_style(div1, "white-space", "pre-line");
+    			add_location(div1, file, 103, 4, 2844);
+    			add_location(fieldset, file, 101, 4, 2798);
+    			add_location(form, file, 100, 3, 2787);
+    			add_location(br0, file, 109, 3, 3012);
+    			attr_dev(div2, "class", "column column-60");
+    			add_location(div2, file, 99, 2, 2753);
+    			add_location(br1, file, 112, 2, 3061);
+    			attr_dev(button, "class", "btn btn-default copy");
+    			attr_dev(button, "data-clipboard-text", /*art*/ ctx[5]);
+    			add_location(button, file, 113, 3, 3069);
+    			add_location(br2, file, 116, 2, 3157);
+    			add_location(br3, file, 117, 2, 3164);
+    			attr_dev(a, "class", "btn btn-default");
+    			attr_dev(a, "href", "/");
+    			add_location(a, file, 118, 3, 3172);
+    			attr_dev(div3, "class", "column column-20");
+    			add_location(div3, file, 111, 2, 3028);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div0, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, form);
+    			append_dev(form, fieldset);
+    			append_dev(fieldset, legend);
+    			append_dev(fieldset, t2);
+    			append_dev(fieldset, div1);
+    			append_dev(div1, t3);
+    			append_dev(div2, t4);
+    			append_dev(div2, br0);
+    			insert_dev(target, t5, anchor);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, br1);
+    			append_dev(div3, t6);
+    			append_dev(div3, button);
+    			append_dev(button, t7);
+    			append_dev(div3, t8);
+    			append_dev(div3, br2);
+    			append_dev(div3, t9);
+    			append_dev(div3, br3);
+    			append_dev(div3, t10);
+    			append_dev(div3, a);
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*art*/ 32) set_data_dev(t3, /*art*/ ctx[5]);
+
+    			if (dirty & /*textSize*/ 64) {
+    				set_style(div1, "font-size", /*textSize*/ ctx[6] + "px");
+    			}
+
+    			if (dirty & /*textSize*/ 64) {
+    				set_style(div1, "line-height", /*textSize*/ ctx[6] + "px");
+    			}
+
+    			if (dirty & /*art*/ 32) {
+    				attr_dev(button, "data-clipboard-text", /*art*/ ctx[5]);
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t5);
+    			if (detaching) detach_dev(div3);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block_1.name,
+    		type: "else",
+    		source: "(97:2) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (57:1) {#if !generated}
+    function create_if_block(ctx) {
+    	let div0;
+    	let t0;
+    	let div4;
+    	let fieldset;
+    	let legend;
+    	let t2;
+    	let div1;
+    	let label0;
+    	let t4;
+    	let input0;
+    	let t5;
+    	let div2;
+    	let label1;
+    	let t7;
+    	let input1;
+    	let t8;
+    	let div3;
+    	let label2;
+    	let t10;
+    	let select;
+    	let option0;
+    	let option1;
+    	let option2;
+    	let t14;
+    	let t15;
+    	let dispose;
+
+    	function select_block_type_1(ctx, dirty) {
+    		if (/*files*/ ctx[0] !== undefined && /*width*/ ctx[1] < 501 && /*width*/ ctx[1] > 99 && /*chars*/ ctx[2] !== "") return create_if_block_2;
+    		return create_else_block;
+    	}
+
+    	let current_block_type = select_block_type_1(ctx);
+    	let if_block0 = current_block_type(ctx);
+    	let if_block1 = /*err*/ ctx[4] && create_if_block_1(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div0 = element("div");
+    			t0 = space();
+    			div4 = element("div");
+    			fieldset = element("fieldset");
+    			legend = element("legend");
+    			legend.textContent = "Upload Image";
+    			t2 = space();
+    			div1 = element("div");
+    			label0 = element("label");
+    			label0.textContent = "Pick an image < 5mb (jpg, png, bmp):";
+    			t4 = space();
+    			input0 = element("input");
+    			t5 = space();
+    			div2 = element("div");
+    			label1 = element("label");
+    			label1.textContent = "Number of characters in a row:";
+    			t7 = space();
+    			input1 = element("input");
+    			t8 = space();
+    			div3 = element("div");
+    			label2 = element("label");
+    			label2.textContent = "Characterset:";
+    			t10 = space();
+    			select = element("select");
+    			option0 = element("option");
+    			option0.textContent = "Grayscale 70 ";
+    			option1 = element("option");
+    			option1.textContent = "Grayscale 10 ";
+    			option2 = element("option");
+    			option2.textContent = "Blocks";
+    			t14 = space();
+    			if_block0.c();
+    			t15 = space();
+    			if (if_block1) if_block1.c();
+    			attr_dev(div0, "class", "column column-25");
+    			add_location(div0, file, 57, 2, 1370);
+    			add_location(legend, file, 60, 4, 1459);
+    			attr_dev(label0, "for", "file");
+    			add_location(label0, file, 62, 5, 1523);
+    			attr_dev(input0, "id", "file");
+    			attr_dev(input0, "name", "file");
+    			attr_dev(input0, "type", "file");
+    			add_location(input0, file, 63, 5, 1593);
+    			attr_dev(div1, "class", "form-group");
+    			add_location(div1, file, 61, 4, 1493);
+    			attr_dev(label1, "for", "width");
+    			add_location(label1, file, 66, 5, 1699);
+    			attr_dev(input1, "id", "width");
+    			attr_dev(input1, "name", "width");
+    			attr_dev(input1, "type", "number");
+    			attr_dev(input1, "min", "100");
+    			attr_dev(input1, "max", "500");
+    			attr_dev(input1, "placeholder", "Range: 100 - 500");
+    			add_location(input1, file, 67, 5, 1762);
+    			attr_dev(div2, "class", "form-group");
+    			add_location(div2, file, 65, 4, 1669);
+    			attr_dev(label2, "for", "select");
+    			add_location(label2, file, 71, 5, 1928);
+    			option0.__value = "gscale_70";
+    			option0.value = option0.__value;
+    			add_location(option0, file, 73, 5, 2036);
+    			option1.__value = "gscale_10";
+    			option1.value = option1.__value;
+    			add_location(option1, file, 74, 5, 2091);
+    			option2.__value = "gscale_block";
+    			option2.value = option2.__value;
+    			add_location(option2, file, 75, 5, 2146);
+    			attr_dev(select, "id", "select");
+    			attr_dev(select, "name", "select");
+    			if (/*chars*/ ctx[2] === void 0) add_render_callback(() => /*select_change_handler*/ ctx[11].call(select));
+    			add_location(select, file, 72, 5, 1976);
+    			attr_dev(div3, "class", "form-group");
+    			add_location(div3, file, 70, 4, 1898);
+    			add_location(fieldset, file, 59, 4, 1444);
+    			attr_dev(div4, "class", "column column-50");
+    			add_location(div4, file, 58, 2, 1409);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, div0, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, fieldset);
+    			append_dev(fieldset, legend);
+    			append_dev(fieldset, t2);
+    			append_dev(fieldset, div1);
+    			append_dev(div1, label0);
+    			append_dev(div1, t4);
+    			append_dev(div1, input0);
+    			append_dev(fieldset, t5);
+    			append_dev(fieldset, div2);
+    			append_dev(div2, label1);
+    			append_dev(div2, t7);
+    			append_dev(div2, input1);
+    			set_input_value(input1, /*width*/ ctx[1]);
+    			append_dev(fieldset, t8);
+    			append_dev(fieldset, div3);
+    			append_dev(div3, label2);
+    			append_dev(div3, t10);
+    			append_dev(div3, select);
+    			append_dev(select, option0);
+    			append_dev(select, option1);
+    			append_dev(select, option2);
+    			select_option(select, /*chars*/ ctx[2]);
+    			append_dev(fieldset, t14);
+    			if_block0.m(fieldset, null);
+    			append_dev(div4, t15);
+    			if (if_block1) if_block1.m(div4, null);
+    			if (remount) run_all(dispose);
+
+    			dispose = [
+    				listen_dev(input0, "change", /*input0_change_handler*/ ctx[9]),
+    				listen_dev(input1, "input", /*input1_input_handler*/ ctx[10]),
+    				listen_dev(select, "change", /*select_change_handler*/ ctx[11])
+    			];
+    		},
+    		p: function update(ctx, dirty) {
+    			if (dirty & /*width*/ 2 && to_number(input1.value) !== /*width*/ ctx[1]) {
+    				set_input_value(input1, /*width*/ ctx[1]);
+    			}
+
+    			if (dirty & /*chars*/ 4) {
+    				select_option(select, /*chars*/ ctx[2]);
+    			}
+
+    			if (current_block_type === (current_block_type = select_block_type_1(ctx)) && if_block0) {
+    				if_block0.p(ctx, dirty);
+    			} else {
+    				if_block0.d(1);
+    				if_block0 = current_block_type(ctx);
+
+    				if (if_block0) {
+    					if_block0.c();
+    					if_block0.m(fieldset, null);
+    				}
+    			}
+
+    			if (/*err*/ ctx[4]) {
+    				if (if_block1) ; else {
+    					if_block1 = create_if_block_1(ctx);
+    					if_block1.c();
+    					if_block1.m(div4, null);
+    				}
+    			} else if (if_block1) {
+    				if_block1.d(1);
+    				if_block1 = null;
+    			}
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div0);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(div4);
+    			if_block0.d();
+    			if (if_block1) if_block1.d();
+    			run_all(dispose);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block.name,
+    		type: "if",
+    		source: "(57:1) {#if !generated}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (83:4) {:else}
+    function create_else_block(ctx) {
+    	let button;
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			button.textContent = "Generate";
+    			attr_dev(button, "class", "btn btn-error btn-ghost");
+    			button.disabled = true;
+    			add_location(button, file, 83, 5, 2390);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, button, anchor);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_else_block.name,
+    		type: "else",
+    		source: "(83:4) {:else}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (80:4) {#if files!== undefined && width < 501 && width > 99 && chars!== ""}
+    function create_if_block_2(ctx) {
+    	let button;
+    	let dispose;
+
+    	const block = {
+    		c: function create() {
+    			button = element("button");
+    			button.textContent = "Generate";
+    			attr_dev(button, "class", "btn btn-primary");
+    			add_location(button, file, 80, 5, 2298);
+    		},
+    		m: function mount(target, anchor, remount) {
+    			insert_dev(target, button, anchor);
+    			if (remount) dispose();
+    			dispose = listen_dev(button, "click", /*sendForm*/ ctx[7], false, false, false);
+    		},
+    		p: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(button);
+    			dispose();
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_2.name,
+    		type: "if",
+    		source: "(80:4) {#if files!== undefined && width < 501 && width > 99 && chars!== \\\"\\\"}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    // (89:3) {#if err}
+    function create_if_block_1(ctx) {
+    	let br0;
+    	let t0;
+    	let br1;
+    	let t1;
+    	let div;
+
+    	const block = {
+    		c: function create() {
+    			br0 = element("br");
+    			t0 = space();
+    			br1 = element("br");
+    			t1 = space();
+    			div = element("div");
+    			div.textContent = "Problem uploading image, check the file size, format or number of characters and try again.";
+    			add_location(br0, file, 89, 4, 2507);
+    			add_location(br1, file, 90, 4, 2516);
+    			attr_dev(div, "class", "terminal-alert terminal-alert-error");
+    			add_location(div, file, 91, 4, 2525);
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, br0, anchor);
+    			insert_dev(target, t0, anchor);
+    			insert_dev(target, br1, anchor);
+    			insert_dev(target, t1, anchor);
+    			insert_dev(target, div, anchor);
+    		},
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(br0);
+    			if (detaching) detach_dev(t0);
+    			if (detaching) detach_dev(br1);
+    			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(div);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_if_block_1.name,
+    		type: "if",
+    		source: "(89:3) {#if err}",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function create_fragment(ctx) {
+    	let div2;
+    	let div1;
+    	let h30;
+    	let div0;
+    	let a0;
+    	let t1;
+    	let nav;
+    	let ul;
+    	let li;
+    	let a1;
+    	let h31;
+    	let t3;
+    	let div4;
+    	let div3;
+    	let t4;
+    	let br;
+
+    	function select_block_type(ctx, dirty) {
+    		if (!/*generated*/ ctx[3]) return create_if_block;
+    		return create_else_block_1;
+    	}
+
+    	let current_block_type = select_block_type(ctx);
+    	let if_block = current_block_type(ctx);
+
+    	const block = {
+    		c: function create() {
+    			div2 = element("div");
+    			div1 = element("div");
+    			h30 = element("h3");
+    			div0 = element("div");
+    			a0 = element("a");
+    			a0.textContent = "Pix 2 Ascii";
+    			t1 = space();
+    			nav = element("nav");
+    			ul = element("ul");
+    			li = element("li");
+    			a1 = element("a");
+    			h31 = element("h3");
+    			h31.textContent = "#GitHub";
+    			t3 = space();
+    			div4 = element("div");
+    			div3 = element("div");
+    			if_block.c();
+    			t4 = space();
+    			br = element("br");
+    			attr_dev(a0, "href", "/");
+    			attr_dev(a0, "class", "no-style");
+    			add_location(a0, file, 42, 36, 987);
+    			attr_dev(div0, "class", "logo terminal-prompt");
+    			add_location(div0, file, 42, 2, 953);
+    			add_location(h30, file, 41, 1, 946);
+    			attr_dev(div1, "class", "terminal-logo");
+    			add_location(div1, file, 40, 1, 917);
+    			add_location(h31, file, 47, 74, 1162);
+    			attr_dev(a1, "class", "menu-item");
+    			attr_dev(a1, "href", "https://github.com/Aveek-Saha/pix2ascii");
+    			add_location(a1, file, 47, 6, 1094);
+    			add_location(li, file, 47, 2, 1090);
+    			add_location(ul, file, 46, 1, 1083);
+    			attr_dev(nav, "class", "terminal-menu");
+    			add_location(nav, file, 45, 1, 1054);
+    			attr_dev(div2, "class", "terminal-nav");
+    			add_location(div2, file, 39, 0, 889);
+    			attr_dev(div3, "class", "row");
+    			add_location(div3, file, 55, 1, 1332);
+    			attr_dev(div4, "class", "container");
+    			add_location(div4, file, 53, 0, 1305);
+    			add_location(br, file, 125, 0, 3261);
+    		},
+    		l: function claim(nodes) {
+    			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
+    		},
+    		m: function mount(target, anchor) {
+    			insert_dev(target, div2, anchor);
+    			append_dev(div2, div1);
+    			append_dev(div1, h30);
+    			append_dev(h30, div0);
+    			append_dev(div0, a0);
+    			append_dev(div2, t1);
+    			append_dev(div2, nav);
+    			append_dev(nav, ul);
+    			append_dev(ul, li);
+    			append_dev(li, a1);
+    			append_dev(a1, h31);
+    			insert_dev(target, t3, anchor);
+    			insert_dev(target, div4, anchor);
+    			append_dev(div4, div3);
+    			if_block.m(div3, null);
+    			insert_dev(target, t4, anchor);
+    			insert_dev(target, br, anchor);
+    		},
+    		p: function update(ctx, [dirty]) {
+    			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
+    				if_block.p(ctx, dirty);
+    			} else {
+    				if_block.d(1);
+    				if_block = current_block_type(ctx);
+
+    				if (if_block) {
+    					if_block.c();
+    					if_block.m(div3, null);
+    				}
+    			}
+    		},
+    		i: noop,
+    		o: noop,
+    		d: function destroy(detaching) {
+    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(t3);
+    			if (detaching) detach_dev(div4);
+    			if_block.d();
+    			if (detaching) detach_dev(t4);
+    			if (detaching) detach_dev(br);
+    		}
+    	};
+
+    	dispatch_dev("SvelteRegisterBlock", {
+    		block,
+    		id: create_fragment.name,
+    		type: "component",
+    		source: "",
+    		ctx
+    	});
+
+    	return block;
+    }
+
+    function instance($$self, $$props, $$invalidate) {
+    	let files, width, chars;
+    	let generated = false, err = false;
+    	let art = "";
+    	let textSize = 15;
+    	var clipboard = new ClipboardJS(".copy");
+
+    	function sendForm() {
+    		// console.log(files[0], width, chars);
+    		var formData = new FormData();
+
+    		$$invalidate(6, textSize = Math.floor(1500 / width));
+
+    		// err = false
+    		formData.append("image", files[0]);
+
+    		formData.append("width", width);
+    		formData.append("charset", chars);
+    		var request = new XMLHttpRequest();
+    		request.open("POST", "http://localhost:5001/pix2ascii/us-central1/ascii");
+    		request.send(formData);
+
+    		request.onreadystatechange = function () {
+    			if (request.readyState === XMLHttpRequest.DONE) {
+    				var status = request.status;
+
+    				if (status === 0 || status >= 200 && status < 400) {
+    					$$invalidate(4, err = false);
+    					$$invalidate(5, art = request.responseText);
+    					$$invalidate(3, generated = true);
+    				} else {
+    					$$invalidate(4, err = true);
+    					console.log("Error");
+    				}
+    			}
+    		};
+    	}
+
+    	const writable_props = [];
+
+    	Object.keys($$props).forEach(key => {
+    		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console_1.warn(`<App> was created with unknown prop '${key}'`);
+    	});
+
+    	let { $$slots = {}, $$scope } = $$props;
+    	validate_slots("App", $$slots, []);
+
+    	function input0_change_handler() {
+    		files = this.files;
+    		$$invalidate(0, files);
+    	}
+
+    	function input1_input_handler() {
+    		width = to_number(this.value);
+    		$$invalidate(1, width);
+    	}
+
+    	function select_change_handler() {
+    		chars = select_value(this);
+    		$$invalidate(2, chars);
+    	}
+
+    	$$self.$capture_state = () => ({
+    		files,
+    		width,
+    		chars,
+    		generated,
+    		err,
+    		art,
+    		textSize,
+    		clipboard,
+    		sendForm
+    	});
+
+    	$$self.$inject_state = $$props => {
+    		if ("files" in $$props) $$invalidate(0, files = $$props.files);
+    		if ("width" in $$props) $$invalidate(1, width = $$props.width);
+    		if ("chars" in $$props) $$invalidate(2, chars = $$props.chars);
+    		if ("generated" in $$props) $$invalidate(3, generated = $$props.generated);
+    		if ("err" in $$props) $$invalidate(4, err = $$props.err);
+    		if ("art" in $$props) $$invalidate(5, art = $$props.art);
+    		if ("textSize" in $$props) $$invalidate(6, textSize = $$props.textSize);
+    		if ("clipboard" in $$props) clipboard = $$props.clipboard;
+    	};
+
+    	if ($$props && "$$inject" in $$props) {
+    		$$self.$inject_state($$props.$$inject);
+    	}
+
+    	return [
+    		files,
+    		width,
+    		chars,
+    		generated,
+    		err,
+    		art,
+    		textSize,
+    		sendForm,
+    		clipboard,
+    		input0_change_handler,
+    		input1_input_handler,
+    		select_change_handler
+    	];
+    }
+
+    class App extends SvelteComponentDev {
+    	constructor(options) {
+    		super(options);
+    		init(this, options, instance, create_fragment, safe_not_equal, {});
+
+    		dispatch_dev("SvelteRegisterComponent", {
+    			component: this,
+    			tagName: "App",
+    			options,
+    			id: create_fragment.name
+    		});
+    	}
+    }
+
+    const app = new App({
+    	target: document.body,
+    	props: {
+    		// name: 'world'
+    	}
+    });
+
+    return app;
+
+}());
 //# sourceMappingURL=bundle.js.map

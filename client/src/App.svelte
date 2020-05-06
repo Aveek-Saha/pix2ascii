@@ -1,31 +1,33 @@
 <script>
 	let files, width, chars
-	let generated = false
+	let generated = false, err = false
 	let art = ""
 	let textSize = 15
 
 	var clipboard = new ClipboardJS('.copy');
 
 	function sendForm() {
-		console.log(files[0], width, chars);
+		// console.log(files[0], width, chars);
 		var formData = new FormData();
 		textSize = Math.floor(1500/width)
+		// err = false
 
 		formData.append("image", files[0]);
 		formData.append("width", width);
 		formData.append("charset", chars);
 
 		var request = new XMLHttpRequest();
-		request.open("POST", "https://us-central1-pix2ascii.cloudfunctions.net/ascii");
+		request.open("POST", "http://localhost:5001/pix2ascii/us-central1/ascii");
 		request.send(formData);
 		request.onreadystatechange = function () {
 		if(request.readyState === XMLHttpRequest.DONE) {
 			var status = request.status;
 			if (status === 0 || (status >= 200 && status < 400)) {
-			// console.log(request.responseText);
+			err = false
 			art = request.responseText
 			generated = true
 			} else {
+			err = true
 			console.log("Error");
 			
 			}
@@ -55,11 +57,10 @@
 	{#if !generated}
 		<div class="column column-25"></div>
 		<div class="column column-50">
-			<!-- <form> -->
 				<fieldset>
 				<legend>Upload Image</legend>
 				<div class="form-group">
-					<label for="file">Pick an image:</label>
+					<label for="file">Pick an image &lt 5mb (jpg, png, bmp):</label>
 					<input id="file" name="file" bind:files={files} type="file">
 				</div>
 				<div class="form-group">
@@ -85,7 +86,13 @@
 
 					
 				</fieldset>
-			<!-- </form> -->
+			{#if err}
+				<br>
+				<br>
+				<div class="terminal-alert terminal-alert-error">
+					Problem uploading image, check the file size, format or number of characters and try again.
+				</div>
+			{/if}
 		</div>
 		{:else}
 
