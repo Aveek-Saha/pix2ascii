@@ -16,6 +16,7 @@ jobs:
     
     - name: Build
       run: |
+        ls
         cd client
         npm i
         npm run build
