@@ -18,11 +18,6 @@ const runtimeOpts = {
 // Automatically allow cross-origin requests
 app.use(cors({ origin: true }));
 
-app.get('/', (req, res) => {
-    console.log("working");
-    res.send("Works")
-});
-
 
 app.post('/', (req, res) => {
 
