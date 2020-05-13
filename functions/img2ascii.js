@@ -1,4 +1,5 @@
 const Jimp = require('jimp');
+const ds = require('js-data-structs');
 // const chalk = require('chalk');
 
 exports.convert = function (file, width, options) {
@@ -51,9 +52,10 @@ exports.convert = function (file, width, options) {
                 // console.log(element.join(""));
                 toWrite += element.join("") + '\n'
             });
-            // console.log(toWrite)
+            var lzw = ds.LZW(gscale + '\n')
+            var comp = lzw.encode(toWrite)
 
-            return toWrite
+            return comp
 
         }
     ) 

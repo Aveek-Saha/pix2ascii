@@ -17,6 +17,6 @@
     "sirv-cli": "^0.4.4"
   },
   "dependencies": {
-    
+    "js-data-structs": "^1.1.1"
   }
 }

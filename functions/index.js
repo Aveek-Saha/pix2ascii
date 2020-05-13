@@ -36,7 +36,7 @@ app.post('/', (req, res) => {
 
     // This code will process each file uploaded.
     busboy.on('file', (fieldname, file, filename, encoding, mimetype) => {
-        console.log(mimetype !== "image/png" || mimetype !== "image/jpeg" || mimetype !== "image/bmp");
+        
         var width = parseInt(fields['width'])
         
         if ((mimetype !== "image/png" && mimetype !== "image/jpeg" && mimetype !== "image/bmp" )
@@ -79,7 +79,7 @@ app.post('/', (req, res) => {
             fs.unlinkSync(uploads[file]);
 
         }
-        res.send(art[0]);
+        res.json({ ascii :art[0]});
     });
 
     busboy.end(req.rawBody);

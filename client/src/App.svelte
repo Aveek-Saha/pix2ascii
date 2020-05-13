@@ -1,8 +1,14 @@
 <script>
+	import { LZW } from 'js-data-structs'
 	let files, width, chars
 	let generated = false, err = false, loading = false
 	let art = ""
 	let textSize = 15
+	let grayscale = {
+        gscale_70: "@$B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~<>i!lI;:,\" ^`'.".split("").reverse().join(""),
+        gscale_10: "@%#*+=-:. ".split("").reverse().join(""),
+        gscale_block: "░▒▓█"
+    }
 
 	var clipboard = new ClipboardJS('.copy');
 
@@ -23,7 +29,8 @@
 			var status = request.status;
 			if (status === 0 || (status >= 200 && status < 400)) {
 				err = false
-				art = request.responseText
+				var lzw = LZW(grayscale[chars] + '\n')
+				art = lzw.decode(JSON.parse(request.response).ascii)
 				generated = true
 			} else {
 				err = true
