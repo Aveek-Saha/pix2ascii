@@ -1,16 +1,15 @@
 <script>
 	let files, width, chars
-	let generated = false, err = false
+	let generated = false, err = false, loading = false
 	let art = ""
 	let textSize = 15
 
 	var clipboard = new ClipboardJS('.copy');
 
 	function sendForm() {
-		// console.log(files[0], width, chars);
 		var formData = new FormData();
 		textSize = Math.floor(1500/width)
-		// err = false
+		loading = true
 
 		formData.append("image", files[0]);
 		formData.append("width", width);
@@ -23,14 +22,14 @@
 		if(request.readyState === XMLHttpRequest.DONE) {
 			var status = request.status;
 			if (status === 0 || (status >= 200 && status < 400)) {
-			err = false
-			art = request.responseText
-			generated = true
+				err = false
+				art = request.responseText
+				generated = true
 			} else {
-			err = true
-			console.log("Error");
-			
+				err = true
+				console.log("Error");
 			}
+			loading = false
 		}
 		};
 		
@@ -77,7 +76,7 @@
 
 					</select>
 				</div>
-				{#if files!== undefined && width < 501 && width > 99 && chars!== ""}
+				{#if files!== undefined && width < 501 && width > 99 && chars!== "" && !loading}
 					<button class="btn btn-primary"
 					on:click={sendForm}>Generate</button>
 				{:else}
@@ -91,6 +90,16 @@
 				<br>
 				<div class="terminal-alert terminal-alert-error">
 					Problem uploading image, check the file size, format or number of characters and try again.
+				</div>
+			{/if}
+
+			{#if loading}
+				<div class="spinner">
+					<div class="rect1"></div>
+					<div class="rect2"></div>
+					<div class="rect3"></div>
+					<div class="rect4"></div>
+					<div class="rect5"></div>
 				</div>
 			{/if}
 		</div>
@@ -126,9 +135,57 @@
 <br>
 
 
-<!-- <div class="row end-lg end-m end-s">
-    
-</div> -->
-
 <style>
+.spinner {
+  margin: 50px auto;
+  width: 60px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color : ivory;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
 </style>
